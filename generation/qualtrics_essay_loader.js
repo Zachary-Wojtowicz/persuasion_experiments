@@ -85,8 +85,8 @@ Qualtrics.SurveyEngine.addOnReady(function () {
   
         var chosen = pickRandom(candidates);
   
-        // Save the essay text (this is what you were already doing)
-        Qualtrics.SurveyEngine.setEmbeddedData("essay", chosen.essay);
+        // Save the essay text with newlines converted to <br> for HTML display
+        Qualtrics.SurveyEngine.setEmbeddedData("essay", chosen.essay.replace(/\n/g, "<br>"));
   
         // Optional: save metadata for analysis/debugging
         Qualtrics.SurveyEngine.setEmbeddedData("essay_issue", chosen.issue);
