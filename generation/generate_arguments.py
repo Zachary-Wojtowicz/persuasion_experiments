@@ -17,7 +17,8 @@ Usage (generate n pairs per orientation for all topics & both political orientat
 
 import os
 import json
-from openai import OpenAI
+import asyncio
+from openai import AsyncOpenAI
 
 # ---------------------------------------------------------------------------
 # Config: issues, stances, and tone statements (from your spec)
@@ -74,17 +75,17 @@ ESSAY_PROMPT = """Please write a short, five-paragraph essay that makes the foll
 Each paragraph should be separated by a blank line, but do not include a header or any other formatting. {tone_statement}"""
 
 def get_client():
-    """OpenAI client; uses OPENAI_API_KEY from environment."""
+    """OpenAI async client; uses OPENAI_API_KEY from environment."""
     key = os.environ.get("OPENAI_API_KEY")
     if not key:
         raise RuntimeError("Set OPENAI_API_KEY in your environment.")
-    return OpenAI()
+    return AsyncOpenAI()
 
 
-def generate_points(client: OpenAI, stance: str, model: str = "gpt-4o-mini") -> tuple[list[str], str]:
+async def generate_points(client: AsyncOpenAI, stance: str, model: str = "gpt-4o-mini") -> tuple[list[str], str]:
     """Step 1: Get 5 key points for the given stance. Returns (points, prompt_used)."""
     prompt = POINT_GENERATION_PROMPT.format(stance=stance)
-    resp = client.chat.completions.create(
+    resp = await client.chat.completions.create(
         model=model,
         messages=[{"role": "user", "content": prompt}],
         temperature=0.7,
@@ -107,8 +108,8 @@ def generate_points(client: OpenAI, stance: str, model: str = "gpt-4o-mini") -> 
     return points[:5], prompt
 
 
-def generate_essay(
-    client: OpenAI,
+async def generate_essay(
+    client: AsyncOpenAI,
     stance: str,
     contrary_stance: str,
     points: list[str],
@@ -128,7 +129,7 @@ def generate_essay(
         point_5=points[4],
         tone_statement=tone_statement,
     )
-    resp = client.chat.completions.create(
+    resp = await client.chat.completions.create(
         model=model,
         messages=[{"role": "user", "content": prompt}],
         temperature=0.7,
@@ -136,8 +137,8 @@ def generate_essay(
     return resp.choices[0].message.content.strip(), prompt
 
 
-def run_one(
-    client: OpenAI,
+async def run_one(
+    client: AsyncOpenAI,
     issue_key: str,
     tone_key: str,
     politics: str,
@@ -147,8 +148,8 @@ def run_one(
     stance, contrary_stance = stances_for(issue_key, politics)
     tone_statement = TONES[tone_key]
 
-    points, point_prompt = generate_points(client, stance, model=model)
-    essay, essay_prompt = generate_essay(
+    points, point_prompt = await generate_points(client, stance, model=model)
+    essay, essay_prompt = await generate_essay(
         client, stance, contrary_stance, points, tone_statement, model=model
     )
 
@@ -165,8 +166,43 @@ def run_one(
     }
 
 
-def run_topic(
-    client: OpenAI,
+async def _generate_pair(
+    client: AsyncOpenAI,
+    issue_key: str,
+    politics: str,
+    stance: str,
+    contrary_stance: str,
+    pair_idx: int,
+    essays_per_tone: int,
+    model: str,
+) -> dict:
+    """Generate one pair: points + strong/weak essays. Helper for parallel execution."""
+    print(f"  [{issue_key} / {politics}] Pair {pair_idx + 1}/{essays_per_tone}: Generating 5 points ...", flush=True)
+    points, point_prompt = await generate_points(client, stance, model=model)
+    if len(points) < 5:
+        raise ValueError(f"Expected 5 points for {issue_key} / {politics}, got {len(points)}")
+    print(f"  [{issue_key} / {politics}] Pair {pair_idx + 1}/{essays_per_tone}: Got {len(points)} points.", flush=True)
+
+    # Generate one essay per tone (strong and weak) using these points
+    essays = []
+    for tone_key in TONES:
+        tone_statement = TONES[tone_key]
+        print(f"  [{issue_key} / {politics}] Pair {pair_idx + 1}/{essays_per_tone}: Generating {tone_key} essay ...", flush=True)
+        essay, essay_prompt = await generate_essay(
+            client, stance, contrary_stance, points, tone_statement, model=model
+        )
+        essays.append({"tone": tone_key, "essay": essay, "prompt": essay_prompt})
+
+    return {
+        "pair_index": pair_idx,
+        "points": points,
+        "point_generation_prompt": point_prompt,
+        "essays": essays,
+    }
+
+
+async def run_topic(
+    client: AsyncOpenAI,
     issue_key: str,
     politics_list: list[str] | None = None,
     essays_per_tone: int = 3,
@@ -177,6 +213,7 @@ def run_topic(
     Each pair shares a unique set of 5 points, with one strong and one weak essay.
 
     politics_list controls which orientations to generate for (default: both).
+    Pairs are generated in parallel across the essays_per_tone dimension.
     """
     if politics_list is None:
         politics_list = list(POLITICS)
@@ -185,31 +222,17 @@ def run_topic(
     for politics in politics_list:
         stance, contrary_stance = stances_for(issue_key, politics)
 
-        # Generate N pairs: each pair has its own set of points + one strong & one weak essay
-        pairs = []
-        for pair_idx in range(essays_per_tone):
-            print(f"  [{issue_key} / {politics}] Pair {pair_idx + 1}/{essays_per_tone}: Generating 5 points ...", flush=True)
-            points, point_prompt = generate_points(client, stance, model=model)
-            if len(points) < 5:
-                raise ValueError(f"Expected 5 points for {issue_key} / {politics}, got {len(points)}")
-            print(f"  [{issue_key} / {politics}] Pair {pair_idx + 1}/{essays_per_tone}: Got {len(points)} points.", flush=True)
-
-            # Generate one essay per tone (strong and weak) using these points
-            essays = []
-            for tone_key in TONES:
-                tone_statement = TONES[tone_key]
-                print(f"  [{issue_key} / {politics}] Pair {pair_idx + 1}/{essays_per_tone}: Generating {tone_key} essay ...", flush=True)
-                essay, essay_prompt = generate_essay(
-                    client, stance, contrary_stance, points, tone_statement, model=model
-                )
-                essays.append({"tone": tone_key, "essay": essay, "prompt": essay_prompt})
-
-            pairs.append({
-                "pair_index": pair_idx,
-                "points": points,
-                "point_generation_prompt": point_prompt,
-                "essays": essays,
-            })
+        # Generate N pairs in parallel
+        pair_tasks = [
+            _generate_pair(
+                client, issue_key, politics, stance, contrary_stance,
+                pair_idx, essays_per_tone, model
+            )
+            for pair_idx in range(essays_per_tone)
+        ]
+        pairs = await asyncio.gather(*pair_tasks)
+        # Sort by pair_index to maintain consistent ordering
+        pairs = sorted(pairs, key=lambda p: p["pair_index"])
 
         stance_runs.append({
             "politics": politics,
@@ -230,7 +253,7 @@ def run_topic(
     return {"issue": issue_key, "stance_runs": stance_runs}
 
 
-def main():
+async def async_main():
     import argparse
 
     parser = argparse.ArgumentParser(description="Generate persuasive essays (2-step: points → essay).")
@@ -258,8 +281,8 @@ def main():
 
         results = []
         for issue_key in issue_keys:
-            print(f"Topic: {issue_key} — politics={politics_list}, generating {args.essays_per_tone} pairs per orientation ...")
-            result = run_topic(
+            print(f"Topic: {issue_key} — politics={politics_list}, generating {args.essays_per_tone} pairs per orientation (in parallel) ...")
+            result = await run_topic(
                 client,
                 issue_key,
                 politics_list=politics_list,
@@ -276,44 +299,18 @@ def main():
             with open(args.out, "w") as f:
                 json.dump(results, f, indent=2)
             print(f"Wrote to {args.out}")
-        for r in results:
-            if "stance_runs" in r:
-                for sr in r["stance_runs"]:
-                    for pair in sr["pairs"]:
-                        print("\n" + "=" * 60)
-                        s = sr["stance"]
-                        print(f"Issue: {r['issue']} | Politics: {sr['politics']} | Pair: {pair['pair_index'] + 1}")
-                        print(f"Stance: {s[:60] + '...' if len(s) > 60 else s}")
-                        print("Points:")
-                        for i, p in enumerate(pair["points"], 1):
-                            print(f"  {i}. {p}")
-                        print("=" * 60)
-                        for e in pair["essays"]:
-                            print(f"\n--- {e['tone'].upper()} ---\n{e['essay']}\n")
-            else:
-                for pair in r["pairs"]:
-                    print("\n" + "=" * 60)
-                    print(f"Issue: {r['issue']} | Politics: {r['politics']} | Pair: {pair['pair_index'] + 1}")
-                    print(f"Stance: {r['stance']}")
-                    print("Points:")
-                    for i, p in enumerate(pair["points"], 1):
-                        print(f"  {i}. {p}")
-                    print("=" * 60)
-                    for e in pair["essays"]:
-                        print(f"\n--- {e['tone'].upper()} ---\n{e['essay']}\n")
         return
 
     # Single-essay mode (original behavior)
-    result = run_one(client, args.issue, args.tone, args.politics, model=args.model)
+    result = await run_one(client, args.issue, args.tone, args.politics, model=args.model)
     if args.out:
         with open(args.out, "w") as f:
             json.dump(result, f, indent=2)
         print(f"Wrote to {args.out}")
-    print("Points:")
-    for i, p in enumerate(result["points"], 1):
-        print(f"  {i}. {p}")
-    print("\nEssay:")
-    print(result["essay"])
+
+
+def main():
+    asyncio.run(async_main())
 
 
 if __name__ == "__main__":
