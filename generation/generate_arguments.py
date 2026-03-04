@@ -11,14 +11,33 @@ controls how many pairs are generated (each pair = 1 strong + 1 weak essay).
 The 'politics' variable (liberal / conservative) determines which stance
 is argued *for* and which is the contrary stance on each topic.
 
-Usage (generate n pairs per orientation for all topics & both political orientations):
-  python generate_arguments.py --all --both-politics --essays-per-tone 5 --out all_essays.json --model gpt-5.2
+Usage:
+  # Single essay (one issue, one tone, one political orientation)
+  python generate_arguments.py --issue guns --tone weak --politics liberal
+
+  # All topics, both political orientations, 5 pairs each (OpenAI, default model)
+  python generate_arguments.py --all --both-politics --essays-per-tone 5 --out essays.json
+
+  # Same as above, with Anthropic
+  python generate_arguments.py --all --both-politics --essays-per-tone 5 --out essays_anthropic.json --provider anthropic
+
+  # Specify a custom model
+  python generate_arguments.py --all --out essays.json --model gpt-4o --provider openai
+
+  # Adjust temperature (default 1.0; OpenAI allows 0.0-2.0, Anthropic allows 0.0-1.0)
+  python generate_arguments.py --all --out essays.json --temperature 1.5 
+
+Environment variables:
+  OPENAI_API_KEY    - Required when using --provider openai (default)
+  ANTHROPIC_API_KEY - Required when using --provider anthropic
 """
 
 import os
 import json
 import asyncio
+from abc import ABC, abstractmethod
 from openai import AsyncOpenAI
+from anthropic import AsyncAnthropic, InternalServerError
 
 # ---------------------------------------------------------------------------
 # Config: issues, stances, and tone statements (from your spec)
@@ -74,23 +93,82 @@ ESSAY_PROMPT = """Please write a short, five-paragraph essay that makes the foll
 
 Each paragraph should be separated by a blank line, but do not include a header or any other formatting. {tone_statement}"""
 
-def get_client():
-    """OpenAI async client; uses OPENAI_API_KEY from environment."""
-    key = os.environ.get("OPENAI_API_KEY")
-    if not key:
-        raise RuntimeError("Set OPENAI_API_KEY in your environment.")
-    return AsyncOpenAI()
+class LLMClient(ABC):
+    """Abstract base class for LLM API clients."""
+    
+    @abstractmethod
+    async def complete(self, prompt: str, model: str, temperature: float = 0.7) -> str:
+        """Send a prompt and return the completion text."""
+        pass
 
 
-async def generate_points(client: AsyncOpenAI, stance: str, model: str = "gpt-4o-mini") -> tuple[list[str], str]:
+class OpenAIClient(LLMClient):
+    """OpenAI API client wrapper."""
+    
+    def __init__(self):
+        key = os.environ.get("OPENAI_API_KEY")
+        if not key:
+            raise RuntimeError("Set OPENAI_API_KEY in your environment.")
+        self._client = AsyncOpenAI()
+    
+    async def complete(self, prompt: str, model: str, temperature: float = 0.7) -> str:
+        resp = await self._client.chat.completions.create(
+            model=model,
+            messages=[{"role": "user", "content": prompt}],
+            temperature=temperature,
+        )
+        return resp.choices[0].message.content.strip()
+
+
+class AnthropicClient(LLMClient):
+    """Anthropic API client wrapper."""
+    
+    def __init__(self):
+        key = os.environ.get("ANTHROPIC_API_KEY")
+        if not key:
+            raise RuntimeError("Set ANTHROPIC_API_KEY in your environment.")
+        self._client = AsyncAnthropic()
+    
+    async def complete(self, prompt: str, model: str, temperature: float = 0.7) -> str:
+        for attempt in range(5):
+            try:
+                resp = await self._client.messages.create(
+                    model=model,
+                    max_tokens=4096,
+                    messages=[{"role": "user", "content": prompt}],
+                    temperature=temperature,
+                )
+                return resp.content[0].text.strip()
+            except InternalServerError:
+                if attempt == 4:
+                    raise
+                await asyncio.sleep(10)
+
+
+PROVIDERS = {
+    "openai": OpenAIClient,
+    "anthropic": AnthropicClient,
+}
+
+DEFAULT_MODELS = {
+    "openai": "gpt-4o-mini",
+    "anthropic": "claude-sonnet-4-20250514",
+}
+
+
+def get_client(provider: str = "openai") -> LLMClient:
+    """Get an LLM client for the specified provider."""
+    if provider not in PROVIDERS:
+        raise ValueError(f"Unknown provider: {provider}. Choose from: {list(PROVIDERS.keys())}")
+    return PROVIDERS[provider]()
+
+
+async def generate_points(
+    client: LLMClient, stance: str, model: str = "gpt-4o-mini", temperature: float = 0.7
+) -> tuple[list[str], str]:
     """Step 1: Get 5 key points for the given stance. Returns (points, prompt_used)."""
     prompt = POINT_GENERATION_PROMPT.format(stance=stance)
-    resp = await client.chat.completions.create(
-        model=model,
-        messages=[{"role": "user", "content": prompt}],
-        temperature=0.7,
-    )
-    text = resp.choices[0].message.content.strip()
+    text = await client.complete(prompt, model, temperature=temperature)
     # Parse "1. ... 2. ..." into a list (robust to minor formatting)
     points = []
     for line in text.split("\n"):
@@ -109,12 +187,13 @@ async def generate_points(client: AsyncOpenAI, stance: str, model: str = "gpt-4o
 
 
 async def generate_essay(
-    client: AsyncOpenAI,
+    client: LLMClient,
     stance: str,
     contrary_stance: str,
     points: list[str],
     tone_statement: str,
     model: str = "gpt-4o-mini",
+    temperature: float = 0.7,
 ) -> tuple[str, str]:
     """Step 2: Turn the 5 points into a 5-paragraph essay with the given tone. Returns (essay, prompt_used)."""
     if len(points) < 5:
@@ -129,28 +208,25 @@ async def generate_essay(
         point_5=points[4],
         tone_statement=tone_statement,
     )
-    resp = await client.chat.completions.create(
-        model=model,
-        messages=[{"role": "user", "content": prompt}],
-        temperature=0.7,
-    )
-    return resp.choices[0].message.content.strip(), prompt
+    text = await client.complete(prompt, model, temperature=temperature)
+    return text, prompt
 
 
 async def run_one(
-    client: AsyncOpenAI,
+    client: LLMClient,
     issue_key: str,
     tone_key: str,
     politics: str,
     model: str = "gpt-4o-mini",
+    temperature: float = 0.7,
 ) -> dict:
     """Generate one essay: one issue, one tone, one political orientation."""
     stance, contrary_stance = stances_for(issue_key, politics)
     tone_statement = TONES[tone_key]
 
-    points, point_prompt = await generate_points(client, stance, model=model)
+    points, point_prompt = await generate_points(client, stance, model=model, temperature=temperature)
     essay, essay_prompt = await generate_essay(
-        client, stance, contrary_stance, points, tone_statement, model=model
+        client, stance, contrary_stance, points, tone_statement, model=model, temperature=temperature
     )
 
     return {
@@ -167,7 +243,7 @@ async def run_one(
 
 
 async def _generate_pair(
-    client: AsyncOpenAI,
+    client: LLMClient,
     issue_key: str,
     politics: str,
     stance: str,
@@ -175,10 +251,11 @@ async def _generate_pair(
     pair_idx: int,
     essays_per_tone: int,
     model: str,
+    temperature: float = 0.7,
 ) -> dict:
     """Generate one pair: points + strong/weak essays. Helper for parallel execution."""
     print(f"  [{issue_key} / {politics}] Pair {pair_idx + 1}/{essays_per_tone}: Generating 5 points ...", flush=True)
-    points, point_prompt = await generate_points(client, stance, model=model)
+    points, point_prompt = await generate_points(client, stance, model=model, temperature=temperature)
     if len(points) < 5:
         raise ValueError(f"Expected 5 points for {issue_key} / {politics}, got {len(points)}")
     print(f"  [{issue_key} / {politics}] Pair {pair_idx + 1}/{essays_per_tone}: Got {len(points)} points.", flush=True)
@@ -189,7 +266,7 @@ async def _generate_pair(
         tone_statement = TONES[tone_key]
         print(f"  [{issue_key} / {politics}] Pair {pair_idx + 1}/{essays_per_tone}: Generating {tone_key} essay ...", flush=True)
         essay, essay_prompt = await generate_essay(
-            client, stance, contrary_stance, points, tone_statement, model=model
+            client, stance, contrary_stance, points, tone_statement, model=model, temperature=temperature
         )
         essays.append({"tone": tone_key, "essay": essay, "prompt": essay_prompt})
 
@@ -202,11 +279,12 @@ async def _generate_pair(
 
 
 async def run_topic(
-    client: AsyncOpenAI,
+    client: LLMClient,
     issue_key: str,
     politics_list: list[str] | None = None,
     essays_per_tone: int = 3,
     model: str = "gpt-4o-mini",
+    temperature: float = 0.7,
 ) -> dict:
     """
     For one topic: generate `essays_per_tone` pairs of essays.
@@ -226,7 +304,7 @@ async def run_topic(
         pair_tasks = [
             _generate_pair(
                 client, issue_key, politics, stance, contrary_stance,
-                pair_idx, essays_per_tone, model
+                pair_idx, essays_per_tone, model, temperature
             )
             for pair_idx in range(essays_per_tone)
         ]
@@ -260,7 +338,9 @@ async def async_main():
     parser.add_argument("--issue", choices=list(ISSUES), default="guns", help="Issue: guns or abortion")
     parser.add_argument("--tone", choices=list(TONES), default="weak", help="Tone: weak or strong (used only without --per-topic)")
     parser.add_argument("--politics", choices=list(POLITICS), default="liberal", help="Political orientation: liberal or conservative")
-    parser.add_argument("--model", default="gpt-4o-mini", help="OpenAI model name")
+    parser.add_argument("--provider", choices=list(PROVIDERS), default="openai", help="LLM provider: openai or anthropic")
+    parser.add_argument("--model", default=None, help="Model name (defaults to provider's default model)")
+    parser.add_argument("--temperature", type=float, default=1.0, help="Sampling temperature (default 1.0)")
     parser.add_argument("--out", default=None, help="Optional JSON output file")
     parser.add_argument("--all", action="store_true", help="Run per-topic for all issues (one point set per topic, then N essays per tone)")
     parser.add_argument("--per-topic", action="store_true", help="One point set for this topic, then N essays per tone (weak and strong)")
@@ -268,7 +348,8 @@ async def async_main():
     parser.add_argument("--essays-per-tone", type=int, default=3, metavar="N", help="With --per-topic or --all: generate N pairs of essays, each pair sharing unique points (default 3)")
     args = parser.parse_args()
 
-    client = get_client()
+    model = args.model or DEFAULT_MODELS[args.provider]
+    client = get_client(args.provider)
 
     # Per-topic mode: one set of points per stance, then N essays per tone
     if args.all or args.per_topic:
@@ -287,7 +368,8 @@ async def async_main():
                 issue_key,
                 politics_list=politics_list,
                 essays_per_tone=args.essays_per_tone,
-                model=args.model,
+                model=model,
+                temperature=args.temperature,
             )
             results.append(result)
             if "stance_runs" in result:
@@ -302,7 +384,7 @@ async def async_main():
         return
 
     # Single-essay mode (original behavior)
-    result = await run_one(client, args.issue, args.tone, args.politics, model=args.model)
+    result = await run_one(client, args.issue, args.tone, args.politics, model=model, temperature=args.temperature)
     if args.out:
         with open(args.out, "w") as f:
             json.dump(result, f, indent=2)
