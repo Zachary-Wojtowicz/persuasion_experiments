@@ -35,7 +35,11 @@ Environment variables:
 import os
 import json
 import asyncio
+import random
 from abc import ABC, abstractmethod
+from dotenv import load_dotenv
+
+load_dotenv()
 from openai import AsyncOpenAI
 from anthropic import AsyncAnthropic, InternalServerError
 
@@ -77,11 +81,37 @@ def stances_for(issue_key: str, politics: str) -> tuple[str, str]:
 # Prompts (from your spec)
 # ---------------------------------------------------------------------------
 
-POINT_GENERATION_PROMPT = """Please list five of the strongest points that can be made arguing the following issue.
+POINT_GENERATION_PROMPTS = [
+    """Please list {num_points} of the strongest points that can be made arguing the following issue.
 
 Issue: {stance}
 
-Respond with exactly 5 numbered points (1. ... 2. ... etc.). No other text."""
+Respond with exactly {num_points} numbered points (1. ... 2. ... etc.). No other text.""",
+
+    """Please identify {num_points} compelling arguments in favor of the following position.
+
+Position: {stance}
+
+Respond with exactly {num_points} numbered points (1. ... 2. ... etc.). No other text.""",
+
+    """What are {num_points} persuasive reasons someone might give to support the following claim?
+
+Claim: {stance}
+
+Respond with exactly {num_points} numbered points (1. ... 2. ... etc.). No other text.""",
+
+    """Please provide {num_points} distinct pieces of evidence or reasoning that support the following stance.
+
+Stance: {stance}
+
+Respond with exactly {num_points} numbered points (1. ... 2. ... etc.). No other text.""",
+
+    """List {num_points} different arguments — drawing on facts, statistics, and logical reasoning — for the following position.
+
+Position: {stance}
+
+Respond with exactly {num_points} numbered points (1. ... 2. ... etc.). No other text.""",
+]
 
 ESSAY_PROMPT = """Please write a short, five-paragraph essay that makes the following 5 points. Your audience believes that {contrary_stance}. Your goal is to persuade them that {stance}.
 
@@ -164,10 +194,11 @@ def get_client(provider: str = "openai") -> LLMClient:
 
 
 async def generate_points(
-    client: LLMClient, stance: str, model: str = "gpt-4o-mini", temperature: float = 0.7
+    client: LLMClient, stance: str, num_points: int = 5, model: str = "gpt-4o-mini", temperature: float = 0.7
 ) -> tuple[list[str], str]:
-    """Step 1: Get 5 key points for the given stance. Returns (points, prompt_used)."""
-    prompt = POINT_GENERATION_PROMPT.format(stance=stance)
+    """Generate key points for the given stance using a randomly selected prompt variant. Returns (points, prompt_used)."""
+    prompt_template = random.choice(POINT_GENERATION_PROMPTS)
+    prompt = prompt_template.format(stance=stance, num_points=num_points)
     text = await client.complete(prompt, model, temperature=temperature)
     # Parse "1. ... 2. ..." into a list (robust to minor formatting)
     points = []
@@ -176,14 +207,14 @@ async def generate_points(
         if not line:
             continue
         # Remove leading "1.", "2.", etc.
-        for i in range(1, 10):
+        for i in range(1, num_points + 5):
             prefix = f"{i}."
             if line.startswith(prefix):
                 line = line[len(prefix) :].strip()
                 break
         if line:
             points.append(line)
-    return points[:5], prompt
+    return points[:num_points], prompt
 
 
 async def generate_essay(
@@ -248,19 +279,13 @@ async def _generate_pair(
     politics: str,
     stance: str,
     contrary_stance: str,
+    points: list[str],
     pair_idx: int,
     essays_per_tone: int,
     model: str,
     temperature: float = 0.7,
 ) -> dict:
-    """Generate one pair: points + strong/weak essays. Helper for parallel execution."""
-    print(f"  [{issue_key} / {politics}] Pair {pair_idx + 1}/{essays_per_tone}: Generating 5 points ...", flush=True)
-    points, point_prompt = await generate_points(client, stance, model=model, temperature=temperature)
-    if len(points) < 5:
-        raise ValueError(f"Expected 5 points for {issue_key} / {politics}, got {len(points)}")
-    print(f"  [{issue_key} / {politics}] Pair {pair_idx + 1}/{essays_per_tone}: Got {len(points)} points.", flush=True)
-
-    # Generate one essay per tone (strong and weak) using these points
+    """Generate one pair: strong/weak essays from pre-selected points. Helper for parallel execution."""
     essays = []
     for tone_key in TONES:
         tone_statement = TONES[tone_key]
@@ -273,7 +298,6 @@ async def _generate_pair(
     return {
         "pair_index": pair_idx,
         "points": points,
-        "point_generation_prompt": point_prompt,
         "essays": essays,
     }
 
@@ -285,6 +309,7 @@ async def run_topic(
     essays_per_tone: int = 3,
     model: str = "gpt-4o-mini",
     temperature: float = 0.7,
+    pool_size: int = 15,
 ) -> dict:
     """
     For one topic: generate `essays_per_tone` pairs of essays.
@@ -300,14 +325,26 @@ async def run_topic(
     for politics in politics_list:
         stance, contrary_stance = stances_for(issue_key, politics)
 
-        # Generate N pairs in parallel
-        pair_tasks = [
-            _generate_pair(
-                client, issue_key, politics, stance, contrary_stance,
-                pair_idx, essays_per_tone, model, temperature
+        # Step 1: Generate a large pool of diverse points
+        print(f"  [{issue_key} / {politics}] Generating pool of {pool_size} points ...", flush=True)
+        point_pool, point_prompt = await generate_points(
+            client, stance, num_points=pool_size, model=model, temperature=temperature
+        )
+        print(f"  [{issue_key} / {politics}] Got {len(point_pool)} points in pool.", flush=True)
+
+        if len(point_pool) < 5:
+            raise ValueError(f"Need at least 5 points in pool for {issue_key}/{politics}, got {len(point_pool)}")
+
+        # Step 2: Sample 5 points per pair and generate essays in parallel
+        pair_tasks = []
+        for pair_idx in range(essays_per_tone):
+            sampled = random.sample(point_pool, 5)
+            pair_tasks.append(
+                _generate_pair(
+                    client, issue_key, politics, stance, contrary_stance,
+                    sampled, pair_idx, essays_per_tone, model, temperature
+                )
             )
-            for pair_idx in range(essays_per_tone)
-        ]
         pairs = await asyncio.gather(*pair_tasks)
         # Sort by pair_index to maintain consistent ordering
         pairs = sorted(pairs, key=lambda p: p["pair_index"])
@@ -316,6 +353,8 @@ async def run_topic(
             "politics": politics,
             "stance": stance,
             "contrary_stance": contrary_stance,
+            "point_pool": point_pool,
+            "point_pool_prompt": point_prompt,
             "pairs": pairs,
         })
 
@@ -326,6 +365,8 @@ async def run_topic(
             "politics": r["politics"],
             "stance": r["stance"],
             "contrary_stance": r["contrary_stance"],
+            "point_pool": r["point_pool"],
+            "point_pool_prompt": r["point_pool_prompt"],
             "pairs": r["pairs"],
         }
     return {"issue": issue_key, "stance_runs": stance_runs}
@@ -346,6 +387,7 @@ async def async_main():
     parser.add_argument("--per-topic", action="store_true", help="One point set for this topic, then N essays per tone (weak and strong)")
     parser.add_argument("--both-politics", action="store_true", help="With --all or --per-topic: generate for both political orientations per topic")
     parser.add_argument("--essays-per-tone", type=int, default=3, metavar="N", help="With --per-topic or --all: generate N pairs of essays, each pair sharing unique points (default 3)")
+    parser.add_argument("--pool-size", type=int, default=15, metavar="N", help="Number of points to generate in the pool before sampling 5 per pair (default 15)")
     args = parser.parse_args()
 
     model = args.model or DEFAULT_MODELS[args.provider]
@@ -370,6 +412,7 @@ async def async_main():
                 essays_per_tone=args.essays_per_tone,
                 model=model,
                 temperature=args.temperature,
+                pool_size=args.pool_size,
             )
             results.append(result)
             if "stance_runs" in result:
