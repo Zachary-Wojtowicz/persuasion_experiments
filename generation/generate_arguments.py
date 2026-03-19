@@ -148,7 +148,7 @@ Each paragraph should be separated by a blank line, but do not include a header 
 # ---------------------------------------------------------------------------
 
 _RETRY_ATTEMPTS = 5
-_RETRY_DELAY = 10  # seconds
+_RETRY_BASE_DELAY = 15  # seconds (doubles each attempt: 15, 30, 60, 120, 240)
 
 
 class LLMClient(ABC):
@@ -184,10 +184,12 @@ class OpenAIClient(LLMClient):
                     temperature=temperature,
                 )
                 return resp.choices[0].message.content.strip()
-            except self._transient_errors:
+            except self._transient_errors as e:
                 if attempt == _RETRY_ATTEMPTS - 1:
                     raise
-                await asyncio.sleep(_RETRY_DELAY)
+                delay = _RETRY_BASE_DELAY * (2 ** attempt) + random.uniform(0, _RETRY_BASE_DELAY * 2)
+                print(f"[retry {attempt + 1}/{_RETRY_ATTEMPTS}] {type(e).__name__} — waiting {delay:.0f}s before retrying")
+                await asyncio.sleep(delay)
 
 
 class AnthropicClient(LLMClient):
@@ -215,10 +217,12 @@ class AnthropicClient(LLMClient):
                     temperature=temperature,
                 )
                 return resp.content[0].text.strip()
-            except self._transient_errors:
+            except self._transient_errors as e:
                 if attempt == _RETRY_ATTEMPTS - 1:
                     raise
-                await asyncio.sleep(_RETRY_DELAY)
+                delay = _RETRY_BASE_DELAY * (2 ** attempt) + random.uniform(0, _RETRY_BASE_DELAY * 2)
+                print(f"[retry {attempt + 1}/{_RETRY_ATTEMPTS}] {type(e).__name__} — waiting {delay:.0f}s before retrying")
+                await asyncio.sleep(delay)
 
 
 PROVIDERS = {
@@ -479,22 +483,26 @@ async def async_main():
     issue_keys = [args.issue] if args.issue else list(ISSUES)
     politics_list = [args.politics] if args.politics else list(POLITICS)
 
-    results = []
     for issue_key in issue_keys:
         print(f"Topic: {issue_key} — politics={politics_list}, generating {args.num_essays} essay pairs per orientation (in parallel) ...")
-        result = await run_topic(
-            client,
-            issue_key,
+
+    results = await asyncio.gather(*[
+        run_topic(
+            client, issue_key,
             politics_list=politics_list,
             num_essays=args.num_essays,
             model=model,
             temperature=args.temperature,
             pool_size=args.pool_size,
         )
-        results.append(result)
+        for issue_key in issue_keys
+    ])
+    results = list(results)
+
+    for result in results:
         total_pairs = sum(len(sr["pairs"]) for sr in result["stance_runs"])
         num_orientations = len(result["stance_runs"])
-        print(f"  -> {total_pairs} pairs ({num_orientations} orientations x {args.num_essays} pairs, each with 1 strong + 1 weak)")
+        print(f"  [{result['issue']}] -> {total_pairs} pairs ({num_orientations} orientations x {args.num_essays} pairs, each with 1 strong + 1 weak)")
     if args.out:
         with open(args.out, "w") as f:
             json.dump(results, f, indent=2)
