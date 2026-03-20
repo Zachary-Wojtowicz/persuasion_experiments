@@ -64,11 +64,11 @@ POLITICS = ("liberal", "conservative")
 
 TONE_VARIANTS = {
     "strong": [
-        "Your task is to write in as confident and self-assured a style as possible. You know without a doubt that you are right and the other side is wrong.",
-        "Write as a passionate advocate who is deeply convinced of this position. Present your case with forceful certainty.",
-        "Write as though you are presenting irrefutable evidence in a debate. Your tone should convey absolute conviction and leave no room for doubt.",
-        "Write with the directness and authority of someone who has studied this issue thoroughly and finds the opposing view indefensible.",
-        "Write as a confident policy analyst delivering findings you consider beyond dispute. Be assertive and unwavering.",
+        "Your task is to write in as confident and self-assured a style as possible. You know without a doubt that you are right and the other side is wrong. Do not hedge, qualify, or express any understanding for the opposing view.",
+        "Write as though you are presenting irrefutable evidence in a debate. Your tone should convey absolute conviction and leave no room for doubt. Never concede a point to the other side.",
+        "Write with the directness and authority of someone who has studied this issue thoroughly and finds the opposing view indefensible. Do not soften your claims or acknowledge uncertainty.",
+        "Write as someone who is genuinely frustrated that this is even debated. The evidence is overwhelming and the opposing position is not just wrong but harmful. Be blunt and forceful.",
+        "Write as a hard-hitting polemicist who marshals evidence like ammunition. Every sentence should push the reader toward your conclusion with zero equivocation.",
     ],
     "weak": [
         "Your task is to write in as tentative and careful a style as possible. You understand that this is a delicate issue, and that it's important not to overclaim.",
@@ -79,16 +79,28 @@ TONE_VARIANTS = {
     ],
 }
 
-RHETORICAL_APPROACHES = [
-    "Open with a concrete example or real-world scenario, and use it as a thread throughout the essay.",
-    "Open with a direct question to the reader that challenges their assumption, then answer it through the essay.",
-    "Lead with the single strongest piece of evidence first, then build supporting arguments around it.",
-    "Open by finding genuine common ground with the reader's position, then gradually pivot to show where it falls short.",
-    "Structure the essay as a series of increasingly specific and surprising observations, building toward the strongest point at the end.",
-    "Open with a historical or comparative framing that puts the issue in broader context.",
-    "Open by vividly describing a specific situation or setting where the issue plays out in practice.",
-    "Begin by conceding what the opposing view gets right, then show why the full picture leads to a different conclusion.",
-]
+RHETORICAL_APPROACHES = {
+    "strong": [
+        "Open with a concrete example or real-world scenario, and use it as a thread throughout the essay.",
+        "Open with a direct question to the reader that challenges their assumption, then answer it through the essay.",
+        "Lead with the single strongest piece of evidence first, then build supporting arguments around it.",
+        "Structure the essay as a series of increasingly specific and surprising observations, building toward the strongest point at the end.",
+        "Open with a historical or comparative framing that puts the issue in broader context.",
+        "Open by vividly describing a specific situation or setting where the issue plays out in practice.",
+        "Open with a bold, declarative claim that sets the tone immediately, then back it up.",
+        "Open by dismantling the most common argument for the opposing view, then build your case from the wreckage.",
+    ],
+    "weak": [
+        "Open with a concrete example or real-world scenario, and use it as a thread throughout the essay.",
+        "Open with a direct question to the reader that invites them to reconsider an assumption.",
+        "Lead with the single strongest piece of evidence first, then build supporting arguments around it.",
+        "Open by finding genuine common ground with the reader's position, then gradually pivot to show where it falls short.",
+        "Structure the essay as a series of increasingly specific and surprising observations, building toward the strongest point at the end.",
+        "Open with a historical or comparative framing that puts the issue in broader context.",
+        "Open by vividly describing a specific situation or setting where the issue plays out in practice.",
+        "Begin by conceding what the opposing view gets right, then show why the full picture leads to a different conclusion.",
+    ],
+}
 
 
 def stances_for(issue_key: str, politics: str) -> tuple[str, str]:
@@ -323,7 +335,7 @@ async def run_one(
     """Generate one essay: one issue, one tone, one political orientation."""
     stance, contrary_stance = stances_for(issue_key, politics)
     tone_statement = random.choice(TONE_VARIANTS[tone_key])
-    rhetorical_approach = random.choice(RHETORICAL_APPROACHES)
+    rhetorical_approach = random.choice(RHETORICAL_APPROACHES[tone_key])
 
     points, point_prompt = await generate_points(client, stance, model=model, temperature=temperature)
     essay, essay_prompt = await generate_essay(
@@ -362,7 +374,7 @@ async def _generate_pair(
 
     async def _gen_essay(tone_key: str) -> dict:
         tone_statement = random.choice(TONE_VARIANTS[tone_key])
-        rhetorical_approach = random.choice(RHETORICAL_APPROACHES)
+        rhetorical_approach = random.choice(RHETORICAL_APPROACHES[tone_key])
         print(f"  [{issue_key} / {politics}] Pair {pair_idx + 1}/{num_essays}: Generating {tone_key} essay ...", flush=True)
         essay, essay_prompt = await generate_essay(
             client, stance, contrary_stance, points, tone_statement, rhetorical_approach,
