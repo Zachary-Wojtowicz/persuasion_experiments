@@ -64,43 +64,21 @@ POLITICS = ("liberal", "conservative")
 
 TONE_VARIANTS = {
     "strong": [
-        "Your task is to write in as confident and self-assured a style as possible. You know without a doubt that you are right and the other side is wrong. Do not hedge, qualify, or express any understanding for the opposing view.",
-        "Write as though you are presenting irrefutable evidence in a debate. Your tone should convey absolute conviction and leave no room for doubt. Never concede a point to the other side.",
-        "Write with the directness and authority of someone who has studied this issue thoroughly and finds the opposing view indefensible. Do not soften your claims or acknowledge uncertainty.",
-        "Write as someone who is genuinely frustrated that this is even debated. The evidence is overwhelming and the opposing position is not just wrong but harmful. Be blunt and forceful.",
-        "Write as a hard-hitting polemicist who marshals evidence like ammunition. Every sentence should push the reader toward your conclusion with zero equivocation.",
+        "Your very first sentence must make a bold, confident claim that signals certainty immediately — do not open with 'Consider' or a question. Write in a maximally confident style throughout. Use intensifiers and boosters: 'clearly,' 'undeniably,' 'the evidence proves,' 'without question,' 'it is obvious,' 'there is no doubt.' NEVER use hedges like 'might,' 'perhaps,' 'it seems,' 'some evidence suggests,' 'it is possible,' or 'arguably.' Present every claim as established fact.",
+        "Open with a direct, declarative statement of fact — no questions, no 'consider,' no hedging. Write with absolute conviction throughout. Use language of certainty: 'the data conclusively shows,' 'it is beyond dispute,' 'any honest reading makes clear,' 'the facts speak for themselves.' Avoid ALL epistemic hedging — no 'could,' 'may,' 'tends to,' 'on balance,' or 'it appears.'",
+        "Begin with an unqualified assertion that leaves no doubt about where you stand. Write as though the case is completely settled throughout. Use declarative, unqualified assertions: 'the reality is,' 'the truth is straightforward,' 'the evidence is overwhelming.' Strip out any tentativeness — no 'roughly,' 'around,' 'in some cases,' or 'one might argue.'",
+        "Start with a strong, definitive claim — not a question or an invitation to 'consider.' Write with forceful directness throughout. Use strong epistemic markers: 'we know,' 'it has been proven,' 'no serious person disputes,' 'the research is unambiguous.' Do not use approximators, shields, or any concessive language.",
+        "Lead with an assertive, unhedged statement of your position. Write with the confidence of someone presenting irrefutable evidence throughout. Use boosters freely: 'plainly,' 'unquestionably,' 'in fact,' 'demonstrably,' 'the record is clear.' Purge all hedging devices — no 'might,' 'perhaps,' 'possibly,' 'it could be argued.'",
     ],
     "weak": [
-        "Your task is to write in as tentative and careful a style as possible. You understand that this is a delicate issue, and that it's important not to overclaim.",
-        "Write as a thoughtful academic who weighs evidence carefully and acknowledges uncertainty. Be measured and cautious in your claims.",
-        "Write as a careful journalist presenting evidence to a skeptical audience. Hedge appropriately and respect the complexity of the issue.",
-        "Write with the restraint of someone who genuinely respects the difficulty of this topic and wants to be fair to all perspectives while still making a case.",
-        "Write as though presenting preliminary findings at a research seminar — be honest about limitations and careful not to overstate conclusions.",
+        "Your very first sentence must signal tentativeness — use a hedge like 'it seems,' 'it appears,' 'one might argue,' or 'there are reasons to think.' Write in a maximally tentative style throughout. Use hedges and qualifiers: 'it seems,' 'the evidence suggests,' 'one might argue,' 'it is possible that,' 'perhaps,' 'arguably.' NEVER use boosters like 'clearly,' 'undeniably,' 'without question,' or 'the facts prove.'",
+        "Open with an explicitly cautious or uncertain framing — signal from the very first words that this is a tentative argument. Write with careful epistemic humility throughout. Use language of uncertainty: 'the data appears to indicate,' 'there is reason to think,' 'on balance,' 'it could be that.' Avoid ALL certainty markers — no 'proves,' 'demonstrates conclusively,' 'beyond dispute.'",
+        "Begin with a hedged, qualified claim that acknowledges uncertainty from the outset. Write as though presenting preliminary findings throughout. Use shields and approximators: 'roughly,' 'approximately,' 'in many cases,' 'tends to,' 'some research suggests.' Strip out any language of certainty — no 'the truth is,' 'it has been proven,' or 'unquestionably.'",
+        "Start with a tentative observation or a question that invites reflection rather than stating a conclusion. Write with measured restraint throughout. Use epistemic qualifiers: 'may,' 'could,' 'it appears that,' 'the available evidence points toward,' 'while not definitive.' Do not use forceful assertions or declarative certainty.",
+        "Lead with a careful, hedged opening that makes clear you are exploring rather than declaring. Write with the caution of someone who respects the complexity of this issue throughout. Use tentative phrasing: 'it is worth considering,' 'there are grounds to believe,' 'the picture that emerges,' 'on one reading of the evidence.' Purge all boosters.",
     ],
 }
 
-RHETORICAL_APPROACHES = {
-    "strong": [
-        "Open with a concrete example or real-world scenario, and use it as a thread throughout the essay.",
-        "Open with a direct question to the reader that challenges their assumption, then answer it through the essay.",
-        "Lead with the single strongest piece of evidence first, then build supporting arguments around it.",
-        "Structure the essay as a series of increasingly specific and surprising observations, building toward the strongest point at the end.",
-        "Open with a historical or comparative framing that puts the issue in broader context.",
-        "Open by vividly describing a specific situation or setting where the issue plays out in practice.",
-        "Open with a bold, declarative claim that sets the tone immediately, then back it up.",
-        "Open by dismantling the most common argument for the opposing view, then build your case from the wreckage.",
-    ],
-    "weak": [
-        "Open with a concrete example or real-world scenario, and use it as a thread throughout the essay.",
-        "Open with a direct question to the reader that invites them to reconsider an assumption.",
-        "Lead with the single strongest piece of evidence first, then build supporting arguments around it.",
-        "Open by finding genuine common ground with the reader's position, then gradually pivot to show where it falls short.",
-        "Structure the essay as a series of increasingly specific and surprising observations, building toward the strongest point at the end.",
-        "Open with a historical or comparative framing that puts the issue in broader context.",
-        "Open by vividly describing a specific situation or setting where the issue plays out in practice.",
-        "Begin by conceding what the opposing view gets right, then show why the full picture leads to a different conclusion.",
-    ],
-}
 
 
 def stances_for(issue_key: str, politics: str) -> tuple[str, str]:
@@ -118,11 +96,15 @@ POINT_GENERATION_PROMPTS = [
 
 Issue: {stance}
 
+IMPORTANT: Do NOT include specific percentages, fractions, or frequencies (e.g., "22%", "one in five", "nearly a quarter"). Arguments should rely on reasoning, mechanisms, and qualitative evidence rather than citing specific numerical estimates.
+
 Respond with exactly {num_points} numbered points (1. ... 2. ... etc.). No other text.""",
 
     """Please identify {num_points} compelling arguments in favor of the following position.
 
 Position: {stance}
+
+IMPORTANT: Do NOT include specific percentages, fractions, or frequencies (e.g., "22%", "one in five", "nearly a quarter"). Arguments should rely on reasoning, mechanisms, and qualitative evidence rather than citing specific numerical estimates.
 
 Respond with exactly {num_points} numbered points (1. ... 2. ... etc.). No other text.""",
 
@@ -130,11 +112,15 @@ Respond with exactly {num_points} numbered points (1. ... 2. ... etc.). No other
 
 Claim: {stance}
 
+IMPORTANT: Do NOT include specific percentages, fractions, or frequencies (e.g., "22%", "one in five", "nearly a quarter"). Arguments should rely on reasoning, mechanisms, and qualitative evidence rather than citing specific numerical estimates.
+
 Respond with exactly {num_points} numbered points (1. ... 2. ... etc.). No other text.""",
 
     """Please provide {num_points} distinct pieces of evidence or reasoning that support the following stance.
 
 Stance: {stance}
+
+IMPORTANT: Do NOT include specific percentages, fractions, or frequencies (e.g., "22%", "one in five", "nearly a quarter"). Arguments should rely on reasoning, mechanisms, and qualitative evidence rather than citing specific numerical estimates.
 
 Respond with exactly {num_points} numbered points (1. ... 2. ... etc.). No other text.""",
 
@@ -142,10 +128,14 @@ Respond with exactly {num_points} numbered points (1. ... 2. ... etc.). No other
 
 Position: {stance}
 
+IMPORTANT: Do NOT include specific percentages, fractions, or frequencies (e.g., "22%", "one in five", "nearly a quarter"). Arguments should rely on reasoning, mechanisms, and qualitative evidence rather than citing specific numerical estimates.
+
 Respond with exactly {num_points} numbered points (1. ... 2. ... etc.). No other text.""",
 ]
 
-ESSAY_PROMPT = """Please write a short, five-paragraph essay that makes the following 5 points. Your audience believes that {contrary_stance}. Your goal is to persuade them that {stance}.
+SYSTEM_PROMPT = """You are writing persuasive essays for a research study on communication styles. You must strictly follow the stylistic constraints given in each request. Do not break character, add meta-commentary, or explain what you are doing. Do not include a title, header, or any formatting beyond paragraph breaks."""
+
+ESSAY_PROMPT = """Write a short persuasive essay of about five paragraphs that makes the following 5 points. Your audience believes that {contrary_stance}. Your goal is to persuade them that {stance}.
 
 1. {point_1}
 2. {point_2}
@@ -153,7 +143,15 @@ ESSAY_PROMPT = """Please write a short, five-paragraph essay that makes the foll
 4. {point_4}
 5. {point_5}
 
-Each paragraph should be separated by a blank line, but do not include a header or any other formatting. Avoid formulaic essay patterns — use a distinctive opening, varied paragraph transitions, and do not simply enumerate points in order. {rhetorical_approach} {tone_statement}"""
+Each paragraph should be separated by a blank line. The essay should be approximately 500 words. Use a distinctive opening, varied paragraph transitions, and do not simply enumerate points in order.
+
+IMPORTANT CONSTRAINTS that apply regardless of stylistic instructions below:
+- Do NOT use hostile, aggressive, dismissive, or emotionally charged language (no 'dangerous,' 'reckless,' 'alarming,' 'devastating,' 'shocking,' 'absurd'). Maintain a respectful, engaged tone toward the reader.
+- Do NOT add caveats about methodology, sample sizes, or evidence quality beyond what the points themselves state.
+- Present the same scope of claims regardless of confidence level — do not inflate or deflate the magnitude of evidence (e.g., do not change 'many' to 'vast' or 'some' to 'a few').
+- Use a similar mix of sentence lengths regardless of confidence level — do not write exclusively in short punchy sentences or exclusively in long complex ones.
+
+STYLISTIC CONSTRAINT (follow this precisely): {tone_statement}"""
 
 # ---------------------------------------------------------------------------
 # LLM clients
@@ -167,7 +165,7 @@ class LLMClient(ABC):
     """Abstract base class for LLM API clients."""
 
     @abstractmethod
-    async def complete(self, prompt: str, model: str, temperature: float = 0.7) -> str:
+    async def complete(self, prompt: str, model: str, temperature: float = 0.7, system: str | None = None) -> str:
         """Send a prompt and return the completion text."""
         pass
 
@@ -187,12 +185,15 @@ class OpenAIClient(LLMClient):
             openai.APIConnectionError,
         )
 
-    async def complete(self, prompt: str, model: str, temperature: float = 0.7) -> str:
+    async def complete(self, prompt: str, model: str, temperature: float = 0.7, system: str | None = None) -> str:
         for attempt in range(_RETRY_ATTEMPTS):
             try:
+                messages = [{"role": "user", "content": prompt}]
+                if system:
+                    messages.insert(0, {"role": "system", "content": system})
                 resp = await self._client.chat.completions.create(
                     model=model,
-                    messages=[{"role": "user", "content": prompt}],
+                    messages=messages,
                     temperature=temperature,
                 )
                 return resp.choices[0].message.content.strip()
@@ -219,15 +220,18 @@ class AnthropicClient(LLMClient):
             anthropic.APIConnectionError,
         )
 
-    async def complete(self, prompt: str, model: str, temperature: float = 0.7) -> str:
+    async def complete(self, prompt: str, model: str, temperature: float = 0.7, system: str | None = None) -> str:
         for attempt in range(_RETRY_ATTEMPTS):
             try:
-                resp = await self._client.messages.create(
+                kwargs = dict(
                     model=model,
                     max_tokens=4096,
                     messages=[{"role": "user", "content": prompt}],
                     temperature=temperature,
                 )
+                if system:
+                    kwargs["system"] = system
+                resp = await self._client.messages.create(**kwargs)
                 return resp.content[0].text.strip()
             except self._transient_errors as e:
                 if attempt == _RETRY_ATTEMPTS - 1:
@@ -282,12 +286,53 @@ def _parse_points(text: str, num_points: int) -> list[str]:
     return points[:num_points]
 
 # ---------------------------------------------------------------------------
+# Confidence validation
+# ---------------------------------------------------------------------------
+
+BOOSTERS = {
+    "clearly", "undeniably", "without question", "obviously", "plainly",
+    "unquestionably", "demonstrably", "in fact", "without doubt", "beyond dispute",
+    "irrefutable", "indisputable", "undoubtedly", "conclusively", "incontrovertible",
+}
+
+HEDGES = {
+    "might", "perhaps", "possibly", "arguably", "seemingly",
+    "it seems", "it appears", "it is possible", "on balance", "tends to",
+    "suggests", "may", "could", "roughly", "approximately",
+}
+
+
+def score_confidence(text: str) -> dict:
+    """Count boosters and hedges in an essay. Returns counts and a simple score."""
+    lower = text.lower()
+    booster_hits = [w for w in BOOSTERS if w in lower]
+    hedge_hits = [w for w in HEDGES if w in lower]
+    return {
+        "booster_count": len(booster_hits),
+        "hedge_count": len(hedge_hits),
+        "boosters_found": booster_hits,
+        "hedges_found": hedge_hits,
+    }
+
+
+def validate_pair(strong_essay: str, weak_essay: str) -> dict:
+    """Check that a strong essay has more boosters and fewer hedges than the weak one."""
+    s = score_confidence(strong_essay)
+    w = score_confidence(weak_essay)
+    passed = (s["booster_count"] > w["booster_count"]) or (w["hedge_count"] > s["hedge_count"])
+    return {
+        "passed": passed,
+        "strong": s,
+        "weak": w,
+    }
+
+# ---------------------------------------------------------------------------
 # Generation helpers
 # ---------------------------------------------------------------------------
 
 
 async def generate_points(
-    client: LLMClient, stance: str, num_points: int = 5, model: str = "gpt-4o-mini", temperature: float = 0.7
+    client: LLMClient, stance: str, num_points: int = 5, model: str = "claude-opus-4-6", temperature: float = 0.7
 ) -> tuple[list[str], str]:
     """Generate key points for the given stance using a randomly selected prompt variant. Returns (points, prompt_used)."""
     prompt_template = random.choice(POINT_GENERATION_PROMPTS)
@@ -302,8 +347,7 @@ async def generate_essay(
     contrary_stance: str,
     points: list[str],
     tone_statement: str,
-    rhetorical_approach: str,
-    model: str = "gpt-4o-mini",
+    model: str = "claude-opus-4-6",
     temperature: float = 0.7,
 ) -> tuple[str, str]:
     """Turn 5 points into a 5-paragraph essay with the given tone. Returns (essay, prompt_used)."""
@@ -317,10 +361,9 @@ async def generate_essay(
         point_3=points[2],
         point_4=points[3],
         point_5=points[4],
-        rhetorical_approach=rhetorical_approach,
         tone_statement=tone_statement,
     )
-    text = await client.complete(prompt, model, temperature=temperature)
+    text = await client.complete(prompt, model, temperature=temperature, system=SYSTEM_PROMPT)
     return text, prompt
 
 
@@ -329,17 +372,16 @@ async def run_one(
     issue_key: str,
     tone_key: str,
     politics: str,
-    model: str = "gpt-4o-mini",
+    model: str = "claude-opus-4-6",
     temperature: float = 0.7,
 ) -> dict:
     """Generate one essay: one issue, one tone, one political orientation."""
     stance, contrary_stance = stances_for(issue_key, politics)
     tone_statement = random.choice(TONE_VARIANTS[tone_key])
-    rhetorical_approach = random.choice(RHETORICAL_APPROACHES[tone_key])
 
     points, point_prompt = await generate_points(client, stance, model=model, temperature=temperature)
     essay, essay_prompt = await generate_essay(
-        client, stance, contrary_stance, points, tone_statement, rhetorical_approach,
+        client, stance, contrary_stance, points, tone_statement,
         model=model, temperature=temperature
     )
 
@@ -348,7 +390,6 @@ async def run_one(
         "politics": politics,
         "tone": tone_key,
         "tone_variant": tone_statement,
-        "rhetorical_approach": rhetorical_approach,
         "stance": stance,
         "contrary_stance": contrary_stance,
         "points": points,
@@ -374,16 +415,14 @@ async def _generate_pair(
 
     async def _gen_essay(tone_key: str) -> dict:
         tone_statement = random.choice(TONE_VARIANTS[tone_key])
-        rhetorical_approach = random.choice(RHETORICAL_APPROACHES[tone_key])
         print(f"  [{issue_key} / {politics}] Pair {pair_idx + 1}/{num_essays}: Generating {tone_key} essay ...", flush=True)
         essay, essay_prompt = await generate_essay(
-            client, stance, contrary_stance, points, tone_statement, rhetorical_approach,
+            client, stance, contrary_stance, points, tone_statement,
             model=model, temperature=temperature
         )
         return {
             "tone": tone_key,
             "tone_variant": tone_statement,
-            "rhetorical_approach": rhetorical_approach,
             "essay": essay,
             "prompt": essay_prompt,
         }
@@ -402,7 +441,7 @@ async def run_topic(
     issue_key: str,
     politics_list: list[str] | None = None,
     num_essays: int = 3,
-    model: str = "gpt-4o-mini",
+    model: str = "claude-opus-4-6",
     temperature: float = 0.7,
     pool_size: int = 15,
 ) -> dict:
@@ -464,7 +503,7 @@ async def async_main():
     parser.add_argument("--politics", choices=list(POLITICS), default=None, help="Restrict to one political orientation (default: both)")
     parser.add_argument("--provider", choices=list(PROVIDERS), default="anthropic", help="LLM provider (default: anthropic)")
     parser.add_argument("--model", default=None, help="Model name (default: claude-opus-4-6)")
-    parser.add_argument("--temperature", type=float, default=1.0, help="Sampling temperature (default 1.0)")
+    parser.add_argument("--temperature", type=float, default=0.8, help="Sampling temperature (default 0.8)")
     parser.add_argument("--seed", type=int, default=None, help="Random seed for reproducibility")
     parser.add_argument("--out", default=None, help="Optional JSON output file")
     parser.add_argument("--num-essays", type=int, default=3, metavar="N", help="Number of essay pairs per issue/politics combination (default 3)")
@@ -511,13 +550,41 @@ async def async_main():
     ])
     results = list(results)
 
+    # Validate confidence manipulation
+    total_pairs = 0
+    failed_pairs = 0
     for result in results:
-        total_pairs = sum(len(sr["pairs"]) for sr in result["stance_runs"])
+        for sr in result["stance_runs"]:
+            for pair in sr["pairs"]:
+                total_pairs += 1
+                essays_by_tone = {e["tone"]: e["essay"] for e in pair["essays"]}
+                if "strong" in essays_by_tone and "weak" in essays_by_tone:
+                    v = validate_pair(essays_by_tone["strong"], essays_by_tone["weak"])
+                    pair["validation"] = v
+                    if not v["passed"]:
+                        failed_pairs += 1
+    print(f"\nValidation: {total_pairs - failed_pairs}/{total_pairs} pairs passed confidence check.")
+    if failed_pairs:
+        print(f"  WARNING: {failed_pairs} pair(s) may have weak confidence separation — consider regenerating.")
+
+    for result in results:
+        result_pairs = sum(len(sr["pairs"]) for sr in result["stance_runs"])
         num_orientations = len(result["stance_runs"])
-        print(f"  [{result['issue']}] -> {total_pairs} pairs ({num_orientations} orientations x {args.num_essays} pairs, each with 1 strong + 1 weak)")
+        print(f"  [{result['issue']}] -> {result_pairs} pairs ({num_orientations} orientations x {args.num_essays} pairs, each with 1 strong + 1 weak)")
     if args.out:
+        output = {
+            "config": {
+                "provider": args.provider,
+                "model": model,
+                "temperature": args.temperature,
+                "seed": args.seed,
+                "pool_size": args.pool_size,
+                "num_essays": args.num_essays,
+            },
+            "results": results,
+        }
         with open(args.out, "w") as f:
-            json.dump(results, f, indent=2)
+            json.dump(output, f, indent=2)
         print(f"Wrote to {args.out}")
 
 
