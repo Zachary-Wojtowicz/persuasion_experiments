@@ -29,9 +29,11 @@ Qualtrics.SurveyEngine.addOnReady(function () {
         if (!res.ok) throw new Error("Fetch failed: HTTP " + res.status);
   
         var data = await res.json();
-  
-        if (!Array.isArray(data)) {
-          throw new Error("Unexpected JSON format: expected top-level array.");
+
+        // Support both formats: {config, results} wrapper or bare array
+        var results = Array.isArray(data) ? data : (data.results || []);
+        if (!results.length) {
+          throw new Error("Unexpected JSON format: no results found.");
         }
   
         var tTopic = norm(topic);
@@ -41,8 +43,8 @@ Qualtrics.SurveyEngine.addOnReady(function () {
         // Collect all matching essays across all stance_runs + pairs
         var candidates = [];
   
-        for (var i = 0; i < data.length; i++) {
-          var issueObj = data[i];
+        for (var i = 0; i < results.length; i++) {
+          var issueObj = results[i];
           if (norm(issueObj.issue) !== tTopic) continue;
   
           var stanceRuns = issueObj.stance_runs || [];
