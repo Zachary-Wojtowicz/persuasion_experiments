@@ -62,23 +62,38 @@ ISSUES = {
 
 POLITICS = ("liberal", "conservative")
 
+# TONE_VARIANTS = {
+#     "strong": [
+#         "You are a maximally confindent writer who wants to avoid under-asserting yourself. Your very first sentence must be bold and confident, so that it signals absolute certainty immediately. Write in a maximally confident style throughout. Use intensifiers and boosters: 'clearly,' 'undeniably,' 'the evidence proves,' 'without question,' 'it is obvious,' 'there is no doubt.' NEVER use hedges like 'might,' 'perhaps,' 'it seems,' 'some evidence suggests,' 'it is possible,' or 'arguably.' Present every claim as established fact. Your goal is to persuade your reader and you are absolutely certain that you are right and they are wrong, and it's important they come away from your essay knowing that."
+#     ],
+#     "weak": [
+#         "You are a careful and open-minded writer who wants to avoid over-asserting yourself. Your very first sentence must be tentative, so that it signals open-mindedness immediately. Write in a maximally tentative style throughout. Use hedges and qualifiers: 'it seems,' 'the evidence suggests,' 'one might argue,' 'it is possible that,' 'perhaps,' 'arguably.' NEVER use boosters like 'clearly,' 'undeniably,' 'without question,' or 'the facts prove.' Your goal is to persuade your reader, but you are open to the possibility that you may be wrong and they are right, and it's important they come away from your essay knowing that."
+#     ],
+# }
+
 TONE_VARIANTS = {
     "strong": [
-        "Your very first sentence must make a bold, confident claim that signals certainty immediately — do not open with 'Consider' or a question. Write in a maximally confident style throughout. Use intensifiers and boosters: 'clearly,' 'undeniably,' 'the evidence proves,' 'without question,' 'it is obvious,' 'there is no doubt.' NEVER use hedges like 'might,' 'perhaps,' 'it seems,' 'some evidence suggests,' 'it is possible,' or 'arguably.' Present every claim as established fact.",
-        "Open with a direct, declarative statement of fact — no questions, no 'consider,' no hedging. Write with absolute conviction throughout. Use language of certainty: 'the data conclusively shows,' 'it is beyond dispute,' 'any honest reading makes clear,' 'the facts speak for themselves.' Avoid ALL epistemic hedging — no 'could,' 'may,' 'tends to,' 'on balance,' or 'it appears.'",
-        "Begin with an unqualified assertion that leaves no doubt about where you stand. Write as though the case is completely settled throughout. Use declarative, unqualified assertions: 'the reality is,' 'the truth is straightforward,' 'the evidence is overwhelming.' Strip out any tentativeness — no 'roughly,' 'around,' 'in some cases,' or 'one might argue.'",
-        "Start with a strong, definitive claim — not a question or an invitation to 'consider.' Write with forceful directness throughout. Use strong epistemic markers: 'we know,' 'it has been proven,' 'no serious person disputes,' 'the research is unambiguous.' Do not use approximators, shields, or any concessive language.",
-        "Lead with an assertive, unhedged statement of your position. Write with the confidence of someone presenting irrefutable evidence throughout. Use boosters freely: 'plainly,' 'unquestionably,' 'in fact,' 'demonstrably,' 'the record is clear.' Purge all hedging devices — no 'might,' 'perhaps,' 'possibly,' 'it could be argued.'",
+        "You are a maximally confindent writer who wants to avoid under-asserting yourself. Your very first sentence must be bold and confident, so that it signals absolute certainty immediately. Write in a maximally confident style throughout. Use intensifiers and boosters: 'clearly,' 'undeniably,' 'the evidence proves,' 'without question,' 'it is obvious,' 'there is no doubt.' NEVER use hedges like 'might,' 'perhaps,' 'it seems,' 'some evidence suggests,' 'it is possible,' or 'arguably.' Present every claim as established fact. Your goal is to persuade your reader and you are absolutely certain that you are right, and it's important they come away from your essay knowing that."
     ],
     "weak": [
-        "Your very first sentence must signal tentativeness — use a hedge like 'it seems,' 'it appears,' 'one might argue,' or 'there are reasons to think.' Write in a maximally tentative style throughout. Use hedges and qualifiers: 'it seems,' 'the evidence suggests,' 'one might argue,' 'it is possible that,' 'perhaps,' 'arguably.' NEVER use boosters like 'clearly,' 'undeniably,' 'without question,' or 'the facts prove.'",
-        "Open with an explicitly cautious or uncertain framing — signal from the very first words that this is a tentative argument. Write with careful epistemic humility throughout. Use language of uncertainty: 'the data appears to indicate,' 'there is reason to think,' 'on balance,' 'it could be that.' Avoid ALL certainty markers — no 'proves,' 'demonstrates conclusively,' 'beyond dispute.'",
-        "Begin with a hedged, qualified claim that acknowledges uncertainty from the outset. Write as though presenting preliminary findings throughout. Use shields and approximators: 'roughly,' 'approximately,' 'in many cases,' 'tends to,' 'some research suggests.' Strip out any language of certainty — no 'the truth is,' 'it has been proven,' or 'unquestionably.'",
-        "Start with a tentative observation or a question that invites reflection rather than stating a conclusion. Write with measured restraint throughout. Use epistemic qualifiers: 'may,' 'could,' 'it appears that,' 'the available evidence points toward,' 'while not definitive.' Do not use forceful assertions or declarative certainty.",
-        "Lead with a careful, hedged opening that makes clear you are exploring rather than declaring. Write with the caution of someone who respects the complexity of this issue throughout. Use tentative phrasing: 'it is worth considering,' 'there are grounds to believe,' 'the picture that emerges,' 'on one reading of the evidence.' Purge all boosters.",
+        "You are a careful and open-minded writer who wants to avoid over-asserting yourself. Your very first sentence must be tentative, so that it signals open-mindedness immediately. Write in a maximally tentative style throughout. Use hedges and qualifiers: 'it seems,' 'the evidence suggests,' 'one might argue,' 'it is possible that,' 'perhaps,' 'arguably.' NEVER use boosters like 'clearly,' 'undeniably,' 'without question,' or 'the facts prove.' Your goal is to persuade your reader, but you are open to the possibility that you may be wrong, and it's important they come away from your essay knowing that."
     ],
 }
 
+
+# Rhetorical approaches are shared across tones to avoid confounding
+# argument structure with confidence level. All phrasing is tone-neutral:
+# it specifies WHAT to open with, not HOW confidently to say it.
+RHETORICAL_APPROACHES = [
+    "Open with a concrete example or real-world scenario, and use it as a thread throughout the essay.",
+    "Open with a direct question to the reader, then answer it through the essay.",
+    "Lead with the single strongest piece of evidence first, then build supporting arguments around it.",
+    "Structure the essay as a series of increasingly specific observations, building toward the strongest point at the end.",
+    "Open with a historical or comparative framing that puts the issue in broader context.",
+    "Open by vividly describing a specific situation or setting where the issue plays out in practice.",
+    "Open with a clear statement of your position, then support it.",
+    "Open by noting what the opposing view gets right, then make the case for why the full picture leads elsewhere.",
+]
 
 
 def stances_for(issue_key: str, politics: str) -> tuple[str, str]:
@@ -98,39 +113,7 @@ Issue: {stance}
 
 IMPORTANT: Do NOT include specific percentages, fractions, or frequencies (e.g., "22%", "one in five", "nearly a quarter"). Arguments should rely on reasoning, mechanisms, and qualitative evidence rather than citing specific numerical estimates.
 
-Respond with exactly {num_points} numbered points (1. ... 2. ... etc.). No other text.""",
-
-    """Please identify {num_points} compelling arguments in favor of the following position.
-
-Position: {stance}
-
-IMPORTANT: Do NOT include specific percentages, fractions, or frequencies (e.g., "22%", "one in five", "nearly a quarter"). Arguments should rely on reasoning, mechanisms, and qualitative evidence rather than citing specific numerical estimates.
-
-Respond with exactly {num_points} numbered points (1. ... 2. ... etc.). No other text.""",
-
-    """What are {num_points} persuasive reasons someone might give to support the following claim?
-
-Claim: {stance}
-
-IMPORTANT: Do NOT include specific percentages, fractions, or frequencies (e.g., "22%", "one in five", "nearly a quarter"). Arguments should rely on reasoning, mechanisms, and qualitative evidence rather than citing specific numerical estimates.
-
-Respond with exactly {num_points} numbered points (1. ... 2. ... etc.). No other text.""",
-
-    """Please provide {num_points} distinct pieces of evidence or reasoning that support the following stance.
-
-Stance: {stance}
-
-IMPORTANT: Do NOT include specific percentages, fractions, or frequencies (e.g., "22%", "one in five", "nearly a quarter"). Arguments should rely on reasoning, mechanisms, and qualitative evidence rather than citing specific numerical estimates.
-
-Respond with exactly {num_points} numbered points (1. ... 2. ... etc.). No other text.""",
-
-    """List {num_points} different arguments — drawing on facts, statistics, and logical reasoning — for the following position.
-
-Position: {stance}
-
-IMPORTANT: Do NOT include specific percentages, fractions, or frequencies (e.g., "22%", "one in five", "nearly a quarter"). Arguments should rely on reasoning, mechanisms, and qualitative evidence rather than citing specific numerical estimates.
-
-Respond with exactly {num_points} numbered points (1. ... 2. ... etc.). No other text.""",
+Respond with exactly {num_points} numbered points (1. ... 2. ... etc.). No other text."""
 ]
 
 SYSTEM_PROMPT = """You are writing persuasive essays for a research study on communication styles. You must strictly follow the stylistic constraints given in each request. Do not break character, add meta-commentary, or explain what you are doing. Do not include a title, header, or any formatting beyond paragraph breaks."""
@@ -143,15 +126,17 @@ ESSAY_PROMPT = """Write a short persuasive essay of about five paragraphs that m
 4. {point_4}
 5. {point_5}
 
-Each paragraph should be separated by a blank line. The essay should be approximately 500 words. Use a distinctive opening, varied paragraph transitions, and do not simply enumerate points in order.
+Each paragraph should be separated by a blank line. The essay should be approximately 500 words. Do not simply enumerate points in order.
 
-IMPORTANT CONSTRAINTS that apply regardless of stylistic instructions below:
-- Do NOT use hostile, aggressive, dismissive, or emotionally charged language (no 'dangerous,' 'reckless,' 'alarming,' 'devastating,' 'shocking,' 'absurd'). Maintain a respectful, engaged tone toward the reader.
+IMPORTANT CONSTRAINTS:
 - Do NOT add caveats about methodology, sample sizes, or evidence quality beyond what the points themselves state.
 - Present the same scope of claims regardless of confidence level — do not inflate or deflate the magnitude of evidence (e.g., do not change 'many' to 'vast' or 'some' to 'a few').
 - Use a similar mix of sentence lengths regardless of confidence level — do not write exclusively in short punchy sentences or exclusively in long complex ones.
 
-STYLISTIC CONSTRAINT (follow this precisely): {tone_statement}"""
+STYLISTIC CONSTRAINT: {tone_statement}
+
+STRUCTURAL APPROACH (follow this precisely — it determines how you open and organize the essay): {rhetorical_approach}"""
+
 
 # ---------------------------------------------------------------------------
 # LLM clients
@@ -347,6 +332,7 @@ async def generate_essay(
     contrary_stance: str,
     points: list[str],
     tone_statement: str,
+    rhetorical_approach: str,
     model: str = "claude-opus-4-6",
     temperature: float = 0.7,
 ) -> tuple[str, str]:
@@ -362,6 +348,7 @@ async def generate_essay(
         point_4=points[3],
         point_5=points[4],
         tone_statement=tone_statement,
+        rhetorical_approach=rhetorical_approach,
     )
     text = await client.complete(prompt, model, temperature=temperature, system=SYSTEM_PROMPT)
     return text, prompt
@@ -378,10 +365,11 @@ async def run_one(
     """Generate one essay: one issue, one tone, one political orientation."""
     stance, contrary_stance = stances_for(issue_key, politics)
     tone_statement = random.choice(TONE_VARIANTS[tone_key])
+    rhetorical_approach = random.choice(RHETORICAL_APPROACHES)
 
     points, point_prompt = await generate_points(client, stance, model=model, temperature=temperature)
     essay, essay_prompt = await generate_essay(
-        client, stance, contrary_stance, points, tone_statement,
+        client, stance, contrary_stance, points, tone_statement, rhetorical_approach,
         model=model, temperature=temperature
     )
 
@@ -390,6 +378,7 @@ async def run_one(
         "politics": politics,
         "tone": tone_key,
         "tone_variant": tone_statement,
+        "rhetorical_approach": rhetorical_approach,
         "stance": stance,
         "contrary_stance": contrary_stance,
         "points": points,
@@ -413,16 +402,20 @@ async def _generate_pair(
 ) -> dict:
     """Generate one pair: strong/weak essays from pre-selected points (in parallel)."""
 
+    # Each pair uses the SAME rhetorical approach for both tones
+    rhetorical_approach = random.choice(RHETORICAL_APPROACHES)
+
     async def _gen_essay(tone_key: str) -> dict:
         tone_statement = random.choice(TONE_VARIANTS[tone_key])
         print(f"  [{issue_key} / {politics}] Pair {pair_idx + 1}/{num_essays}: Generating {tone_key} essay ...", flush=True)
         essay, essay_prompt = await generate_essay(
-            client, stance, contrary_stance, points, tone_statement,
+            client, stance, contrary_stance, points, tone_statement, rhetorical_approach,
             model=model, temperature=temperature
         )
         return {
             "tone": tone_key,
             "tone_variant": tone_statement,
+            "rhetorical_approach": rhetorical_approach,
             "essay": essay,
             "prompt": essay_prompt,
         }
@@ -432,6 +425,7 @@ async def _generate_pair(
     return {
         "pair_index": pair_idx,
         "points": points,
+        "rhetorical_approach": rhetorical_approach,
         "essays": list(essays),
     }
 
@@ -503,7 +497,7 @@ async def async_main():
     parser.add_argument("--politics", choices=list(POLITICS), default=None, help="Restrict to one political orientation (default: both)")
     parser.add_argument("--provider", choices=list(PROVIDERS), default="anthropic", help="LLM provider (default: anthropic)")
     parser.add_argument("--model", default=None, help="Model name (default: claude-opus-4-6)")
-    parser.add_argument("--temperature", type=float, default=0.8, help="Sampling temperature (default 0.8)")
+    parser.add_argument("--temperature", type=float, default=1.0, help="Sampling temperature (default 1.0)")
     parser.add_argument("--seed", type=int, default=None, help="Random seed for reproducibility")
     parser.add_argument("--out", default=None, help="Optional JSON output file")
     parser.add_argument("--num-essays", type=int, default=3, metavar="N", help="Number of essay pairs per issue/politics combination (default 3)")
