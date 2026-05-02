@@ -1,27 +1,50 @@
 # Persuasion Arguments Generation
 
-Generate paired persuasive essays that vary in tone (strong vs. weak) while holding factual content constant. Designed to produce stimuli for experiments studying how argument strength affects persuasion.
+Generates paired persuasive essays that vary in tone (strong vs. weak) while holding factual content constant. The essays are stimuli for an experiment studying how the confidence/strength of an argument's tone affects persuasion of readers about contested political claims (gun background checks; abortion regret).
 
-## How it works
+This repository is the **stimulus pipeline** for the study; participant-facing data collection happens in a separate Qualtrics survey, which loads stimuli from this repo at runtime via the loader script in `generation/qualtrics_essay_loader.js`.
 
-The generation follows a two-step process:
+## Research project
 
-1. **Point pool generation** — For each issue/stance, the script generates a large pool of argument points (default 15) using a randomly selected prompt variant for diversity.
-2. **Essay generation** — For each essay pair, 5 points are randomly sampled from the pool and turned into two essays: one strong-toned and one weak-toned. Each essay also receives a randomly selected rhetorical approach (e.g., "open with a question," "lead with strongest evidence") and tone instruction variant to maximize stylistic diversity across essays.
+Standalone — no companion analysis or research-project repo is currently referenced from this codebase.
 
-### Variation mechanisms
+## Deployment
 
-The script uses several strategies to ensure essays differ from each other:
+The generated stimulus JSON is served as static files via **GitHub Pages** at `https://Zachary-Wojtowicz.github.io/persuasion_experiments/generation/all_essays.json` (the `.nojekyll` file at the repo root keeps Pages from filtering the directory). The Qualtrics survey fetches that URL at survey load time and assigns one essay per participant. There is no separate webapp deployment — the participant interface is the Qualtrics survey itself.
 
-- **Point generation prompt variants** — Multiple differently-worded prompts for generating argument points, selected at random.
-- **Point pool sampling** — A pool of 15 points is generated once per stance; each essay pair draws a random subset of 5, giving C(15,5) = 3,003 possible combinations.
-- **Tone instruction variants** — Each tone (strong/weak) has 5 different phrasings that convey the same confidence level but suggest different rhetorical registers (e.g., "passionate advocate" vs. "confident policy analyst").
-- **Rhetorical approach rotation** — 8 structural approaches (e.g., "open with a scenario," "begin by conceding common ground") are randomly assigned per essay.
-- **Anti-formula nudge** — Every essay prompt includes an instruction to avoid formulaic patterns and vary transitions.
+## What gets logged
 
-### Experimental design
+This repo does not log participant data directly. The Qualtrics loader (`qualtrics_essay_loader.js`) reads three embedded fields that Qualtrics randomizes upstream — `topic` (`guns` or `abortion`), `politics` (`liberal` or `conservative`), and `tone` (`strong` or `weak`) — and writes the following back as embedded data on each participant's response:
 
-The primary experimental variable is **tone** (`strong` / `weak`). Within each pair, both essays share the same 5 argument points — only the tone differs. The specific tone variant, rhetorical approach, and full prompt used are saved alongside each essay in the output for traceability.
+- `essay` — the full assigned essay text (with `\n` converted to `<br>` for HTML display)
+- `essay_issue`, `essay_politics`, `essay_tone` — confirmed assignment values
+- `essay_pair_index` — index of the chosen essay pair within the stance run
+- `essay_stance`, `essay_contrary_stance` — the position the essay argues and the position it argues against
+
+These embedded fields, plus whatever rating/attitude items the Qualtrics survey itself asks, are the per-participant record. Outcome measures and exclusion/attention-check logic live in the Qualtrics survey, not in this repo.
+
+## Randomization scheme
+
+Within this repo:
+
+- **Stimulus generation** (offline, run once per stimulus set): for each (issue, politics) cell, a pool of 15 argument points is generated and 5 are randomly sampled per essay pair (C(15,5) = 3,003 combinations). Each essay pair shares the same 5 points; the strong and weak essays differ only in tone instruction. Each essay is assigned a random rhetorical approach (8 options, e.g. "open with a question," "lead with strongest evidence") and a random tone-instruction phrasing.
+- **Participant assignment** (at survey time, in the loader): given Qualtrics-assigned `topic` × `politics` × `tone`, the loader collects all matching essays and picks one uniformly at random. If `essay` is already set on the participant's record (e.g., refresh/back-button), it is not reassigned.
+
+The primary experimental factor is **tone** (`strong` vs. `weak`), crossed with `topic` and `politics`. Tone-relevant content (point set, stance, contrary stance) is held constant within each pair; only confidence/hedging language differs. The exact tone variant, rhetorical approach, and full LLM prompt are saved alongside each essay in the output for traceability.
+
+## Stimulus generation pipeline
+
+The generator follows a two-step process:
+
+1. **Point pool generation** — For each issue/stance, the script generates a pool of argument points (default 15) using the point-generation prompt.
+2. **Essay generation** — For each essay pair, 5 points are randomly sampled from the pool and turned into two essays: one strong-toned and one weak-toned, sharing a randomly assigned rhetorical approach.
+
+Variation mechanisms baked in to reduce style/lexical leakage between essays:
+
+- **Point pool sampling** (3,003 combinations per stance).
+- **Tone instruction variants** for each tone level, focused on linguistic markers (boosters vs. hedges) rather than formulaic structure.
+- **Rhetorical approach rotation** (8 structural options) — assigned independently of tone so structure does not confound confidence.
+- **Anti-formula nudge** in every essay prompt to vary transitions and avoid template-y output.
 
 ## Setup
 
@@ -133,6 +156,8 @@ Batch mode produces a JSON array. Each element has:
   }
 ]
 ```
+
+The file consumed in production by the Qualtrics loader is `generation/all_essays.json`, served via GitHub Pages.
 
 ## Issues and stances
 
