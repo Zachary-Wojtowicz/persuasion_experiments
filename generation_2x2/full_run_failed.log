@@ -1,0 +1,1130 @@
+Topic: guns — politics=['liberal', 'conservative'], generating 20 essay quads per orientation (in parallel) ...
+Topic: abortion — politics=['liberal', 'conservative'], generating 20 essay quads per orientation (in parallel) ...
+  [guns / liberal] Generating pool of 15 points ...
+  [guns / conservative] Generating pool of 15 points ...
+  [abortion / liberal] Generating pool of 15 points ...
+  [abortion / conservative] Generating pool of 15 points ...
+  [guns / liberal] Got 15 points in pool.
+  [guns / liberal] Quad 1/20: Generating conf=high/brash=high essay ...
+  [guns / liberal] Quad 1/20: Generating conf=high/brash=low essay ...
+  [guns / liberal] Quad 1/20: Generating conf=low/brash=high essay ...
+  [guns / liberal] Quad 1/20: Generating conf=low/brash=low essay ...
+  [guns / liberal] Quad 2/20: Generating conf=high/brash=high essay ...
+  [guns / liberal] Quad 2/20: Generating conf=high/brash=low essay ...
+  [guns / liberal] Quad 2/20: Generating conf=low/brash=high essay ...
+  [guns / liberal] Quad 2/20: Generating conf=low/brash=low essay ...
+  [guns / liberal] Quad 3/20: Generating conf=high/brash=high essay ...
+  [guns / liberal] Quad 3/20: Generating conf=high/brash=low essay ...
+  [guns / liberal] Quad 3/20: Generating conf=low/brash=high essay ...
+  [guns / liberal] Quad 3/20: Generating conf=low/brash=low essay ...
+  [guns / liberal] Quad 4/20: Generating conf=high/brash=high essay ...
+  [guns / liberal] Quad 4/20: Generating conf=high/brash=low essay ...
+  [guns / liberal] Quad 4/20: Generating conf=low/brash=high essay ...
+  [guns / liberal] Quad 4/20: Generating conf=low/brash=low essay ...
+  [guns / liberal] Quad 5/20: Generating conf=high/brash=high essay ...
+  [guns / liberal] Quad 5/20: Generating conf=high/brash=low essay ...
+  [guns / liberal] Quad 5/20: Generating conf=low/brash=high essay ...
+  [guns / liberal] Quad 5/20: Generating conf=low/brash=low essay ...
+  [guns / liberal] Quad 6/20: Generating conf=high/brash=high essay ...
+  [guns / liberal] Quad 6/20: Generating conf=high/brash=low essay ...
+  [guns / liberal] Quad 6/20: Generating conf=low/brash=high essay ...
+  [guns / liberal] Quad 6/20: Generating conf=low/brash=low essay ...
+  [guns / liberal] Quad 7/20: Generating conf=high/brash=high essay ...
+  [guns / liberal] Quad 7/20: Generating conf=high/brash=low essay ...
+  [guns / liberal] Quad 7/20: Generating conf=low/brash=high essay ...
+  [guns / liberal] Quad 7/20: Generating conf=low/brash=low essay ...
+  [guns / liberal] Quad 8/20: Generating conf=high/brash=high essay ...
+  [guns / liberal] Quad 8/20: Generating conf=high/brash=low essay ...
+  [guns / liberal] Quad 8/20: Generating conf=low/brash=high essay ...
+  [guns / liberal] Quad 8/20: Generating conf=low/brash=low essay ...
+  [guns / liberal] Quad 9/20: Generating conf=high/brash=high essay ...
+  [guns / liberal] Quad 9/20: Generating conf=high/brash=low essay ...
+  [guns / liberal] Quad 9/20: Generating conf=low/brash=high essay ...
+  [guns / liberal] Quad 9/20: Generating conf=low/brash=low essay ...
+  [guns / liberal] Quad 10/20: Generating conf=high/brash=high essay ...
+  [guns / liberal] Quad 10/20: Generating conf=high/brash=low essay ...
+  [guns / liberal] Quad 10/20: Generating conf=low/brash=high essay ...
+  [guns / liberal] Quad 10/20: Generating conf=low/brash=low essay ...
+  [guns / liberal] Quad 11/20: Generating conf=high/brash=high essay ...
+  [guns / liberal] Quad 11/20: Generating conf=high/brash=low essay ...
+  [guns / liberal] Quad 11/20: Generating conf=low/brash=high essay ...
+  [guns / liberal] Quad 11/20: Generating conf=low/brash=low essay ...
+  [guns / liberal] Quad 12/20: Generating conf=high/brash=high essay ...
+  [guns / liberal] Quad 12/20: Generating conf=high/brash=low essay ...
+  [guns / liberal] Quad 12/20: Generating conf=low/brash=high essay ...
+  [guns / liberal] Quad 12/20: Generating conf=low/brash=low essay ...
+  [guns / liberal] Quad 13/20: Generating conf=high/brash=high essay ...
+  [guns / liberal] Quad 13/20: Generating conf=high/brash=low essay ...
+  [guns / liberal] Quad 13/20: Generating conf=low/brash=high essay ...
+  [guns / liberal] Quad 13/20: Generating conf=low/brash=low essay ...
+  [guns / liberal] Quad 14/20: Generating conf=high/brash=high essay ...
+  [guns / liberal] Quad 14/20: Generating conf=high/brash=low essay ...
+  [guns / liberal] Quad 14/20: Generating conf=low/brash=high essay ...
+  [guns / liberal] Quad 14/20: Generating conf=low/brash=low essay ...
+  [guns / liberal] Quad 15/20: Generating conf=high/brash=high essay ...
+  [guns / liberal] Quad 15/20: Generating conf=high/brash=low essay ...
+  [guns / liberal] Quad 15/20: Generating conf=low/brash=high essay ...
+  [guns / liberal] Quad 15/20: Generating conf=low/brash=low essay ...
+  [guns / liberal] Quad 16/20: Generating conf=high/brash=high essay ...
+  [guns / liberal] Quad 16/20: Generating conf=high/brash=low essay ...
+  [guns / liberal] Quad 16/20: Generating conf=low/brash=high essay ...
+  [guns / liberal] Quad 16/20: Generating conf=low/brash=low essay ...
+  [guns / liberal] Quad 17/20: Generating conf=high/brash=high essay ...
+  [guns / liberal] Quad 17/20: Generating conf=high/brash=low essay ...
+  [guns / liberal] Quad 17/20: Generating conf=low/brash=high essay ...
+  [guns / liberal] Quad 17/20: Generating conf=low/brash=low essay ...
+  [guns / liberal] Quad 18/20: Generating conf=high/brash=high essay ...
+  [guns / liberal] Quad 18/20: Generating conf=high/brash=low essay ...
+  [guns / liberal] Quad 18/20: Generating conf=low/brash=high essay ...
+  [guns / liberal] Quad 18/20: Generating conf=low/brash=low essay ...
+  [guns / liberal] Quad 19/20: Generating conf=high/brash=high essay ...
+  [guns / liberal] Quad 19/20: Generating conf=high/brash=low essay ...
+  [guns / liberal] Quad 19/20: Generating conf=low/brash=high essay ...
+  [guns / liberal] Quad 19/20: Generating conf=low/brash=low essay ...
+  [guns / liberal] Quad 20/20: Generating conf=high/brash=high essay ...
+  [guns / liberal] Quad 20/20: Generating conf=high/brash=low essay ...
+  [guns / liberal] Quad 20/20: Generating conf=low/brash=high essay ...
+  [guns / liberal] Quad 20/20: Generating conf=low/brash=low essay ...
+  [guns / conservative] Got 15 points in pool.
+  [guns / conservative] Quad 1/20: Generating conf=high/brash=high essay ...
+  [guns / conservative] Quad 1/20: Generating conf=high/brash=low essay ...
+  [guns / conservative] Quad 1/20: Generating conf=low/brash=high essay ...
+  [guns / conservative] Quad 1/20: Generating conf=low/brash=low essay ...
+  [guns / conservative] Quad 2/20: Generating conf=high/brash=high essay ...
+  [guns / conservative] Quad 2/20: Generating conf=high/brash=low essay ...
+  [guns / conservative] Quad 2/20: Generating conf=low/brash=high essay ...
+  [guns / conservative] Quad 2/20: Generating conf=low/brash=low essay ...
+  [guns / conservative] Quad 3/20: Generating conf=high/brash=high essay ...
+  [guns / conservative] Quad 3/20: Generating conf=high/brash=low essay ...
+  [guns / conservative] Quad 3/20: Generating conf=low/brash=high essay ...
+  [guns / conservative] Quad 3/20: Generating conf=low/brash=low essay ...
+  [guns / conservative] Quad 4/20: Generating conf=high/brash=high essay ...
+  [guns / conservative] Quad 4/20: Generating conf=high/brash=low essay ...
+  [guns / conservative] Quad 4/20: Generating conf=low/brash=high essay ...
+  [guns / conservative] Quad 4/20: Generating conf=low/brash=low essay ...
+  [guns / conservative] Quad 5/20: Generating conf=high/brash=high essay ...
+  [guns / conservative] Quad 5/20: Generating conf=high/brash=low essay ...
+  [guns / conservative] Quad 5/20: Generating conf=low/brash=high essay ...
+  [guns / conservative] Quad 5/20: Generating conf=low/brash=low essay ...
+  [guns / conservative] Quad 6/20: Generating conf=high/brash=high essay ...
+  [guns / conservative] Quad 6/20: Generating conf=high/brash=low essay ...
+  [guns / conservative] Quad 6/20: Generating conf=low/brash=high essay ...
+  [guns / conservative] Quad 6/20: Generating conf=low/brash=low essay ...
+  [guns / conservative] Quad 7/20: Generating conf=high/brash=high essay ...
+  [guns / conservative] Quad 7/20: Generating conf=high/brash=low essay ...
+  [guns / conservative] Quad 7/20: Generating conf=low/brash=high essay ...
+  [guns / conservative] Quad 7/20: Generating conf=low/brash=low essay ...
+  [guns / conservative] Quad 8/20: Generating conf=high/brash=high essay ...
+  [guns / conservative] Quad 8/20: Generating conf=high/brash=low essay ...
+  [guns / conservative] Quad 8/20: Generating conf=low/brash=high essay ...
+  [guns / conservative] Quad 8/20: Generating conf=low/brash=low essay ...
+  [guns / conservative] Quad 9/20: Generating conf=high/brash=high essay ...
+  [guns / conservative] Quad 9/20: Generating conf=high/brash=low essay ...
+  [guns / conservative] Quad 9/20: Generating conf=low/brash=high essay ...
+  [guns / conservative] Quad 9/20: Generating conf=low/brash=low essay ...
+  [guns / conservative] Quad 10/20: Generating conf=high/brash=high essay ...
+  [guns / conservative] Quad 10/20: Generating conf=high/brash=low essay ...
+  [guns / conservative] Quad 10/20: Generating conf=low/brash=high essay ...
+  [guns / conservative] Quad 10/20: Generating conf=low/brash=low essay ...
+  [guns / conservative] Quad 11/20: Generating conf=high/brash=high essay ...
+  [guns / conservative] Quad 11/20: Generating conf=high/brash=low essay ...
+  [guns / conservative] Quad 11/20: Generating conf=low/brash=high essay ...
+  [guns / conservative] Quad 11/20: Generating conf=low/brash=low essay ...
+  [guns / conservative] Quad 12/20: Generating conf=high/brash=high essay ...
+  [guns / conservative] Quad 12/20: Generating conf=high/brash=low essay ...
+  [guns / conservative] Quad 12/20: Generating conf=low/brash=high essay ...
+  [guns / conservative] Quad 12/20: Generating conf=low/brash=low essay ...
+  [guns / conservative] Quad 13/20: Generating conf=high/brash=high essay ...
+  [guns / conservative] Quad 13/20: Generating conf=high/brash=low essay ...
+  [guns / conservative] Quad 13/20: Generating conf=low/brash=high essay ...
+  [guns / conservative] Quad 13/20: Generating conf=low/brash=low essay ...
+  [guns / conservative] Quad 14/20: Generating conf=high/brash=high essay ...
+  [guns / conservative] Quad 14/20: Generating conf=high/brash=low essay ...
+  [guns / conservative] Quad 14/20: Generating conf=low/brash=high essay ...
+  [guns / conservative] Quad 14/20: Generating conf=low/brash=low essay ...
+  [guns / conservative] Quad 15/20: Generating conf=high/brash=high essay ...
+  [guns / conservative] Quad 15/20: Generating conf=high/brash=low essay ...
+  [guns / conservative] Quad 15/20: Generating conf=low/brash=high essay ...
+  [guns / conservative] Quad 15/20: Generating conf=low/brash=low essay ...
+  [guns / conservative] Quad 16/20: Generating conf=high/brash=high essay ...
+  [guns / conservative] Quad 16/20: Generating conf=high/brash=low essay ...
+  [guns / conservative] Quad 16/20: Generating conf=low/brash=high essay ...
+  [guns / conservative] Quad 16/20: Generating conf=low/brash=low essay ...
+  [guns / conservative] Quad 17/20: Generating conf=high/brash=high essay ...
+  [guns / conservative] Quad 17/20: Generating conf=high/brash=low essay ...
+  [guns / conservative] Quad 17/20: Generating conf=low/brash=high essay ...
+  [guns / conservative] Quad 17/20: Generating conf=low/brash=low essay ...
+  [guns / conservative] Quad 18/20: Generating conf=high/brash=high essay ...
+  [guns / conservative] Quad 18/20: Generating conf=high/brash=low essay ...
+  [guns / conservative] Quad 18/20: Generating conf=low/brash=high essay ...
+  [guns / conservative] Quad 18/20: Generating conf=low/brash=low essay ...
+  [guns / conservative] Quad 19/20: Generating conf=high/brash=high essay ...
+  [guns / conservative] Quad 19/20: Generating conf=high/brash=low essay ...
+  [guns / conservative] Quad 19/20: Generating conf=low/brash=high essay ...
+  [guns / conservative] Quad 19/20: Generating conf=low/brash=low essay ...
+  [guns / conservative] Quad 20/20: Generating conf=high/brash=high essay ...
+  [guns / conservative] Quad 20/20: Generating conf=high/brash=low essay ...
+  [guns / conservative] Quad 20/20: Generating conf=low/brash=high essay ...
+  [guns / conservative] Quad 20/20: Generating conf=low/brash=low essay ...
+[retry 1/5] RateLimitError — waiting 35s before retrying
+[retry 1/5] RateLimitError — waiting 43s before retrying
+[retry 1/5] RateLimitError — waiting 25s before retrying
+[retry 1/5] RateLimitError — waiting 38s before retrying
+[retry 1/5] RateLimitError — waiting 39s before retrying
+[retry 1/5] RateLimitError — waiting 30s before retrying
+[retry 1/5] RateLimitError — waiting 34s before retrying
+[retry 1/5] RateLimitError — waiting 26s before retrying
+[retry 1/5] RateLimitError — waiting 32s before retrying
+[retry 1/5] RateLimitError — waiting 21s before retrying
+[retry 1/5] RateLimitError — waiting 38s before retrying
+[retry 1/5] RateLimitError — waiting 44s before retrying
+[retry 1/5] RateLimitError — waiting 20s before retrying
+[retry 1/5] RateLimitError — waiting 44s before retrying
+[retry 1/5] RateLimitError — waiting 43s before retrying
+[retry 1/5] RateLimitError — waiting 21s before retrying
+[retry 1/5] RateLimitError — waiting 35s before retrying
+[retry 1/5] RateLimitError — waiting 36s before retrying
+[retry 1/5] RateLimitError — waiting 18s before retrying
+[retry 1/5] RateLimitError — waiting 28s before retrying
+[retry 1/5] RateLimitError — waiting 31s before retrying
+[retry 1/5] RateLimitError — waiting 33s before retrying
+[retry 1/5] RateLimitError — waiting 19s before retrying
+[retry 1/5] RateLimitError — waiting 16s before retrying
+[retry 1/5] RateLimitError — waiting 43s before retrying
+[retry 1/5] RateLimitError — waiting 16s before retrying
+[retry 1/5] RateLimitError — waiting 32s before retrying
+[retry 1/5] RateLimitError — waiting 30s before retrying
+[retry 1/5] RateLimitError — waiting 22s before retrying
+[retry 1/5] RateLimitError — waiting 43s before retrying
+[retry 1/5] RateLimitError — waiting 29s before retrying
+[retry 1/5] RateLimitError — waiting 35s before retrying
+[retry 1/5] RateLimitError — waiting 25s before retrying
+[retry 1/5] RateLimitError — waiting 25s before retrying
+[retry 1/5] RateLimitError — waiting 29s before retrying
+[retry 1/5] RateLimitError — waiting 30s before retrying
+[retry 1/5] RateLimitError — waiting 25s before retrying
+[retry 1/5] RateLimitError — waiting 23s before retrying
+[retry 1/5] RateLimitError — waiting 34s before retrying
+[retry 1/5] RateLimitError — waiting 19s before retrying
+[retry 1/5] RateLimitError — waiting 29s before retrying
+[retry 1/5] RateLimitError — waiting 26s before retrying
+[retry 1/5] RateLimitError — waiting 40s before retrying
+[retry 1/5] RateLimitError — waiting 29s before retrying
+[retry 1/5] RateLimitError — waiting 26s before retrying
+[retry 1/5] RateLimitError — waiting 30s before retrying
+[retry 1/5] RateLimitError — waiting 37s before retrying
+[retry 1/5] RateLimitError — waiting 24s before retrying
+[retry 1/5] RateLimitError — waiting 32s before retrying
+[retry 1/5] RateLimitError — waiting 39s before retrying
+[retry 1/5] RateLimitError — waiting 41s before retrying
+[retry 1/5] RateLimitError — waiting 37s before retrying
+[retry 1/5] RateLimitError — waiting 34s before retrying
+[retry 1/5] RateLimitError — waiting 30s before retrying
+[retry 1/5] RateLimitError — waiting 31s before retrying
+[retry 1/5] RateLimitError — waiting 41s before retrying
+[retry 1/5] RateLimitError — waiting 44s before retrying
+[retry 1/5] RateLimitError — waiting 33s before retrying
+[retry 1/5] RateLimitError — waiting 41s before retrying
+[retry 1/5] RateLimitError — waiting 44s before retrying
+[retry 1/5] RateLimitError — waiting 33s before retrying
+[retry 1/5] RateLimitError — waiting 30s before retrying
+[retry 1/5] RateLimitError — waiting 35s before retrying
+[retry 1/5] RateLimitError — waiting 26s before retrying
+[retry 1/5] RateLimitError — waiting 17s before retrying
+[retry 1/5] RateLimitError — waiting 32s before retrying
+[retry 1/5] RateLimitError — waiting 39s before retrying
+[retry 1/5] RateLimitError — waiting 38s before retrying
+[retry 1/5] RateLimitError — waiting 44s before retrying
+[retry 1/5] RateLimitError — waiting 44s before retrying
+[retry 1/5] RateLimitError — waiting 31s before retrying
+[retry 1/5] RateLimitError — waiting 41s before retrying
+[retry 1/5] RateLimitError — waiting 34s before retrying
+[retry 1/5] RateLimitError — waiting 43s before retrying
+[retry 1/5] RateLimitError — waiting 44s before retrying
+[retry 1/5] RateLimitError — waiting 16s before retrying
+[retry 1/5] RateLimitError — waiting 22s before retrying
+[retry 1/5] RateLimitError — waiting 28s before retrying
+[retry 1/5] RateLimitError — waiting 41s before retrying
+[retry 1/5] RateLimitError — waiting 19s before retrying
+[retry 1/5] RateLimitError — waiting 21s before retrying
+[retry 1/5] RateLimitError — waiting 41s before retrying
+[retry 1/5] RateLimitError — waiting 38s before retrying
+[retry 1/5] RateLimitError — waiting 36s before retrying
+[retry 1/5] RateLimitError — waiting 19s before retrying
+[retry 1/5] RateLimitError — waiting 35s before retrying
+[retry 1/5] RateLimitError — waiting 41s before retrying
+  [abortion / liberal] Got 15 points in pool.
+  [abortion / liberal] Quad 1/20: Generating conf=high/brash=high essay ...
+  [abortion / liberal] Quad 1/20: Generating conf=high/brash=low essay ...
+  [abortion / liberal] Quad 1/20: Generating conf=low/brash=high essay ...
+  [abortion / liberal] Quad 1/20: Generating conf=low/brash=low essay ...
+  [abortion / liberal] Quad 2/20: Generating conf=high/brash=high essay ...
+  [abortion / liberal] Quad 2/20: Generating conf=high/brash=low essay ...
+  [abortion / liberal] Quad 2/20: Generating conf=low/brash=high essay ...
+  [abortion / liberal] Quad 2/20: Generating conf=low/brash=low essay ...
+  [abortion / liberal] Quad 3/20: Generating conf=high/brash=high essay ...
+  [abortion / liberal] Quad 3/20: Generating conf=high/brash=low essay ...
+  [abortion / liberal] Quad 3/20: Generating conf=low/brash=high essay ...
+  [abortion / liberal] Quad 3/20: Generating conf=low/brash=low essay ...
+  [abortion / liberal] Quad 4/20: Generating conf=high/brash=high essay ...
+  [abortion / liberal] Quad 4/20: Generating conf=high/brash=low essay ...
+  [abortion / liberal] Quad 4/20: Generating conf=low/brash=high essay ...
+  [abortion / liberal] Quad 4/20: Generating conf=low/brash=low essay ...
+  [abortion / liberal] Quad 5/20: Generating conf=high/brash=high essay ...
+  [abortion / liberal] Quad 5/20: Generating conf=high/brash=low essay ...
+  [abortion / liberal] Quad 5/20: Generating conf=low/brash=high essay ...
+  [abortion / liberal] Quad 5/20: Generating conf=low/brash=low essay ...
+  [abortion / liberal] Quad 6/20: Generating conf=high/brash=high essay ...
+  [abortion / liberal] Quad 6/20: Generating conf=high/brash=low essay ...
+  [abortion / liberal] Quad 6/20: Generating conf=low/brash=high essay ...
+  [abortion / liberal] Quad 6/20: Generating conf=low/brash=low essay ...
+  [abortion / liberal] Quad 7/20: Generating conf=high/brash=high essay ...
+  [abortion / liberal] Quad 7/20: Generating conf=high/brash=low essay ...
+  [abortion / liberal] Quad 7/20: Generating conf=low/brash=high essay ...
+  [abortion / liberal] Quad 7/20: Generating conf=low/brash=low essay ...
+  [abortion / liberal] Quad 8/20: Generating conf=high/brash=high essay ...
+  [abortion / liberal] Quad 8/20: Generating conf=high/brash=low essay ...
+  [abortion / liberal] Quad 8/20: Generating conf=low/brash=high essay ...
+  [abortion / liberal] Quad 8/20: Generating conf=low/brash=low essay ...
+  [abortion / liberal] Quad 9/20: Generating conf=high/brash=high essay ...
+  [abortion / liberal] Quad 9/20: Generating conf=high/brash=low essay ...
+  [abortion / liberal] Quad 9/20: Generating conf=low/brash=high essay ...
+  [abortion / liberal] Quad 9/20: Generating conf=low/brash=low essay ...
+  [abortion / liberal] Quad 10/20: Generating conf=high/brash=high essay ...
+  [abortion / liberal] Quad 10/20: Generating conf=high/brash=low essay ...
+  [abortion / liberal] Quad 10/20: Generating conf=low/brash=high essay ...
+  [abortion / liberal] Quad 10/20: Generating conf=low/brash=low essay ...
+  [abortion / liberal] Quad 11/20: Generating conf=high/brash=high essay ...
+  [abortion / liberal] Quad 11/20: Generating conf=high/brash=low essay ...
+  [abortion / liberal] Quad 11/20: Generating conf=low/brash=high essay ...
+  [abortion / liberal] Quad 11/20: Generating conf=low/brash=low essay ...
+  [abortion / liberal] Quad 12/20: Generating conf=high/brash=high essay ...
+  [abortion / liberal] Quad 12/20: Generating conf=high/brash=low essay ...
+  [abortion / liberal] Quad 12/20: Generating conf=low/brash=high essay ...
+  [abortion / liberal] Quad 12/20: Generating conf=low/brash=low essay ...
+  [abortion / liberal] Quad 13/20: Generating conf=high/brash=high essay ...
+  [abortion / liberal] Quad 13/20: Generating conf=high/brash=low essay ...
+  [abortion / liberal] Quad 13/20: Generating conf=low/brash=high essay ...
+  [abortion / liberal] Quad 13/20: Generating conf=low/brash=low essay ...
+  [abortion / liberal] Quad 14/20: Generating conf=high/brash=high essay ...
+  [abortion / liberal] Quad 14/20: Generating conf=high/brash=low essay ...
+  [abortion / liberal] Quad 14/20: Generating conf=low/brash=high essay ...
+  [abortion / liberal] Quad 14/20: Generating conf=low/brash=low essay ...
+  [abortion / liberal] Quad 15/20: Generating conf=high/brash=high essay ...
+  [abortion / liberal] Quad 15/20: Generating conf=high/brash=low essay ...
+  [abortion / liberal] Quad 15/20: Generating conf=low/brash=high essay ...
+  [abortion / liberal] Quad 15/20: Generating conf=low/brash=low essay ...
+  [abortion / liberal] Quad 16/20: Generating conf=high/brash=high essay ...
+  [abortion / liberal] Quad 16/20: Generating conf=high/brash=low essay ...
+  [abortion / liberal] Quad 16/20: Generating conf=low/brash=high essay ...
+  [abortion / liberal] Quad 16/20: Generating conf=low/brash=low essay ...
+  [abortion / liberal] Quad 17/20: Generating conf=high/brash=high essay ...
+  [abortion / liberal] Quad 17/20: Generating conf=high/brash=low essay ...
+  [abortion / liberal] Quad 17/20: Generating conf=low/brash=high essay ...
+  [abortion / liberal] Quad 17/20: Generating conf=low/brash=low essay ...
+  [abortion / liberal] Quad 18/20: Generating conf=high/brash=high essay ...
+  [abortion / liberal] Quad 18/20: Generating conf=high/brash=low essay ...
+  [abortion / liberal] Quad 18/20: Generating conf=low/brash=high essay ...
+  [abortion / liberal] Quad 18/20: Generating conf=low/brash=low essay ...
+  [abortion / liberal] Quad 19/20: Generating conf=high/brash=high essay ...
+  [abortion / liberal] Quad 19/20: Generating conf=high/brash=low essay ...
+  [abortion / liberal] Quad 19/20: Generating conf=low/brash=high essay ...
+  [abortion / liberal] Quad 19/20: Generating conf=low/brash=low essay ...
+  [abortion / liberal] Quad 20/20: Generating conf=high/brash=high essay ...
+  [abortion / liberal] Quad 20/20: Generating conf=high/brash=low essay ...
+  [abortion / liberal] Quad 20/20: Generating conf=low/brash=high essay ...
+  [abortion / liberal] Quad 20/20: Generating conf=low/brash=low essay ...
+[retry 1/5] RateLimitError — waiting 16s before retrying
+[retry 1/5] RateLimitError — waiting 17s before retrying
+[retry 1/5] RateLimitError — waiting 38s before retrying
+[retry 1/5] RateLimitError — waiting 44s before retrying
+[retry 1/5] RateLimitError — waiting 32s before retrying
+[retry 1/5] RateLimitError — waiting 31s before retrying
+[retry 1/5] RateLimitError — waiting 22s before retrying
+[retry 1/5] RateLimitError — waiting 40s before retrying
+[retry 1/5] RateLimitError — waiting 41s before retrying
+[retry 1/5] RateLimitError — waiting 19s before retrying
+[retry 1/5] RateLimitError — waiting 39s before retrying
+[retry 1/5] RateLimitError — waiting 20s before retrying
+[retry 1/5] RateLimitError — waiting 32s before retrying
+[retry 1/5] RateLimitError — waiting 19s before retrying
+[retry 1/5] RateLimitError — waiting 39s before retrying
+[retry 1/5] RateLimitError — waiting 18s before retrying
+[retry 1/5] RateLimitError — waiting 36s before retrying
+[retry 1/5] RateLimitError — waiting 34s before retrying
+  [abortion / conservative] Got 15 points in pool.
+  [abortion / conservative] Quad 1/20: Generating conf=high/brash=high essay ...
+  [abortion / conservative] Quad 1/20: Generating conf=high/brash=low essay ...
+  [abortion / conservative] Quad 1/20: Generating conf=low/brash=high essay ...
+  [abortion / conservative] Quad 1/20: Generating conf=low/brash=low essay ...
+  [abortion / conservative] Quad 2/20: Generating conf=high/brash=high essay ...
+  [abortion / conservative] Quad 2/20: Generating conf=high/brash=low essay ...
+  [abortion / conservative] Quad 2/20: Generating conf=low/brash=high essay ...
+  [abortion / conservative] Quad 2/20: Generating conf=low/brash=low essay ...
+  [abortion / conservative] Quad 3/20: Generating conf=high/brash=high essay ...
+  [abortion / conservative] Quad 3/20: Generating conf=high/brash=low essay ...
+  [abortion / conservative] Quad 3/20: Generating conf=low/brash=high essay ...
+  [abortion / conservative] Quad 3/20: Generating conf=low/brash=low essay ...
+  [abortion / conservative] Quad 4/20: Generating conf=high/brash=high essay ...
+  [abortion / conservative] Quad 4/20: Generating conf=high/brash=low essay ...
+  [abortion / conservative] Quad 4/20: Generating conf=low/brash=high essay ...
+  [abortion / conservative] Quad 4/20: Generating conf=low/brash=low essay ...
+  [abortion / conservative] Quad 5/20: Generating conf=high/brash=high essay ...
+  [abortion / conservative] Quad 5/20: Generating conf=high/brash=low essay ...
+  [abortion / conservative] Quad 5/20: Generating conf=low/brash=high essay ...
+  [abortion / conservative] Quad 5/20: Generating conf=low/brash=low essay ...
+  [abortion / conservative] Quad 6/20: Generating conf=high/brash=high essay ...
+  [abortion / conservative] Quad 6/20: Generating conf=high/brash=low essay ...
+  [abortion / conservative] Quad 6/20: Generating conf=low/brash=high essay ...
+  [abortion / conservative] Quad 6/20: Generating conf=low/brash=low essay ...
+  [abortion / conservative] Quad 7/20: Generating conf=high/brash=high essay ...
+  [abortion / conservative] Quad 7/20: Generating conf=high/brash=low essay ...
+  [abortion / conservative] Quad 7/20: Generating conf=low/brash=high essay ...
+  [abortion / conservative] Quad 7/20: Generating conf=low/brash=low essay ...
+  [abortion / conservative] Quad 8/20: Generating conf=high/brash=high essay ...
+  [abortion / conservative] Quad 8/20: Generating conf=high/brash=low essay ...
+  [abortion / conservative] Quad 8/20: Generating conf=low/brash=high essay ...
+  [abortion / conservative] Quad 8/20: Generating conf=low/brash=low essay ...
+  [abortion / conservative] Quad 9/20: Generating conf=high/brash=high essay ...
+  [abortion / conservative] Quad 9/20: Generating conf=high/brash=low essay ...
+  [abortion / conservative] Quad 9/20: Generating conf=low/brash=high essay ...
+  [abortion / conservative] Quad 9/20: Generating conf=low/brash=low essay ...
+  [abortion / conservative] Quad 10/20: Generating conf=high/brash=high essay ...
+  [abortion / conservative] Quad 10/20: Generating conf=high/brash=low essay ...
+  [abortion / conservative] Quad 10/20: Generating conf=low/brash=high essay ...
+  [abortion / conservative] Quad 10/20: Generating conf=low/brash=low essay ...
+  [abortion / conservative] Quad 11/20: Generating conf=high/brash=high essay ...
+  [abortion / conservative] Quad 11/20: Generating conf=high/brash=low essay ...
+  [abortion / conservative] Quad 11/20: Generating conf=low/brash=high essay ...
+  [abortion / conservative] Quad 11/20: Generating conf=low/brash=low essay ...
+  [abortion / conservative] Quad 12/20: Generating conf=high/brash=high essay ...
+  [abortion / conservative] Quad 12/20: Generating conf=high/brash=low essay ...
+  [abortion / conservative] Quad 12/20: Generating conf=low/brash=high essay ...
+  [abortion / conservative] Quad 12/20: Generating conf=low/brash=low essay ...
+  [abortion / conservative] Quad 13/20: Generating conf=high/brash=high essay ...
+  [abortion / conservative] Quad 13/20: Generating conf=high/brash=low essay ...
+  [abortion / conservative] Quad 13/20: Generating conf=low/brash=high essay ...
+  [abortion / conservative] Quad 13/20: Generating conf=low/brash=low essay ...
+  [abortion / conservative] Quad 14/20: Generating conf=high/brash=high essay ...
+  [abortion / conservative] Quad 14/20: Generating conf=high/brash=low essay ...
+  [abortion / conservative] Quad 14/20: Generating conf=low/brash=high essay ...
+  [abortion / conservative] Quad 14/20: Generating conf=low/brash=low essay ...
+  [abortion / conservative] Quad 15/20: Generating conf=high/brash=high essay ...
+  [abortion / conservative] Quad 15/20: Generating conf=high/brash=low essay ...
+  [abortion / conservative] Quad 15/20: Generating conf=low/brash=high essay ...
+  [abortion / conservative] Quad 15/20: Generating conf=low/brash=low essay ...
+  [abortion / conservative] Quad 16/20: Generating conf=high/brash=high essay ...
+  [abortion / conservative] Quad 16/20: Generating conf=high/brash=low essay ...
+  [abortion / conservative] Quad 16/20: Generating conf=low/brash=high essay ...
+  [abortion / conservative] Quad 16/20: Generating conf=low/brash=low essay ...
+  [abortion / conservative] Quad 17/20: Generating conf=high/brash=high essay ...
+  [abortion / conservative] Quad 17/20: Generating conf=high/brash=low essay ...
+  [abortion / conservative] Quad 17/20: Generating conf=low/brash=high essay ...
+  [abortion / conservative] Quad 17/20: Generating conf=low/brash=low essay ...
+  [abortion / conservative] Quad 18/20: Generating conf=high/brash=high essay ...
+  [abortion / conservative] Quad 18/20: Generating conf=high/brash=low essay ...
+  [abortion / conservative] Quad 18/20: Generating conf=low/brash=high essay ...
+  [abortion / conservative] Quad 18/20: Generating conf=low/brash=low essay ...
+  [abortion / conservative] Quad 19/20: Generating conf=high/brash=high essay ...
+  [abortion / conservative] Quad 19/20: Generating conf=high/brash=low essay ...
+  [abortion / conservative] Quad 19/20: Generating conf=low/brash=high essay ...
+  [abortion / conservative] Quad 19/20: Generating conf=low/brash=low essay ...
+  [abortion / conservative] Quad 20/20: Generating conf=high/brash=high essay ...
+  [abortion / conservative] Quad 20/20: Generating conf=high/brash=low essay ...
+  [abortion / conservative] Quad 20/20: Generating conf=low/brash=high essay ...
+  [abortion / conservative] Quad 20/20: Generating conf=low/brash=low essay ...
+[retry 1/5] RateLimitError — waiting 33s before retrying
+[retry 1/5] RateLimitError — waiting 41s before retrying
+[retry 1/5] RateLimitError — waiting 24s before retrying
+[retry 1/5] RateLimitError — waiting 44s before retrying
+[retry 1/5] RateLimitError — waiting 39s before retrying
+[retry 1/5] RateLimitError — waiting 18s before retrying
+[retry 1/5] RateLimitError — waiting 25s before retrying
+[retry 1/5] RateLimitError — waiting 23s before retrying
+[retry 1/5] RateLimitError — waiting 24s before retrying
+[retry 1/5] RateLimitError — waiting 41s before retrying
+[retry 1/5] RateLimitError — waiting 36s before retrying
+[retry 1/5] RateLimitError — waiting 15s before retrying
+[retry 1/5] RateLimitError — waiting 22s before retrying
+[retry 1/5] RateLimitError — waiting 17s before retrying
+[retry 1/5] RateLimitError — waiting 20s before retrying
+[retry 1/5] RateLimitError — waiting 36s before retrying
+[retry 1/5] RateLimitError — waiting 43s before retrying
+[retry 1/5] RateLimitError — waiting 44s before retrying
+[retry 1/5] RateLimitError — waiting 31s before retrying
+[retry 1/5] RateLimitError — waiting 18s before retrying
+[retry 1/5] RateLimitError — waiting 33s before retrying
+[retry 1/5] RateLimitError — waiting 30s before retrying
+[retry 1/5] RateLimitError — waiting 34s before retrying
+[retry 1/5] RateLimitError — waiting 24s before retrying
+[retry 1/5] RateLimitError — waiting 18s before retrying
+[retry 1/5] RateLimitError — waiting 28s before retrying
+[retry 1/5] RateLimitError — waiting 18s before retrying
+[retry 1/5] RateLimitError — waiting 45s before retrying
+[retry 1/5] RateLimitError — waiting 42s before retrying
+[retry 1/5] RateLimitError — waiting 39s before retrying
+[retry 1/5] RateLimitError — waiting 17s before retrying
+[retry 1/5] RateLimitError — waiting 33s before retrying
+[retry 1/5] RateLimitError — waiting 37s before retrying
+[retry 1/5] RateLimitError — waiting 27s before retrying
+[retry 1/5] RateLimitError — waiting 19s before retrying
+[retry 1/5] RateLimitError — waiting 44s before retrying
+[retry 1/5] RateLimitError — waiting 32s before retrying
+[retry 1/5] RateLimitError — waiting 16s before retrying
+[retry 1/5] RateLimitError — waiting 38s before retrying
+[retry 1/5] RateLimitError — waiting 24s before retrying
+[retry 1/5] RateLimitError — waiting 43s before retrying
+[retry 1/5] RateLimitError — waiting 32s before retrying
+[retry 1/5] RateLimitError — waiting 40s before retrying
+[retry 1/5] RateLimitError — waiting 28s before retrying
+[retry 1/5] RateLimitError — waiting 43s before retrying
+[retry 1/5] RateLimitError — waiting 27s before retrying
+[retry 1/5] RateLimitError — waiting 19s before retrying
+[retry 1/5] RateLimitError — waiting 34s before retrying
+[retry 1/5] RateLimitError — waiting 45s before retrying
+[retry 1/5] RateLimitError — waiting 20s before retrying
+[retry 1/5] RateLimitError — waiting 27s before retrying
+[retry 1/5] RateLimitError — waiting 16s before retrying
+[retry 1/5] RateLimitError — waiting 29s before retrying
+[retry 1/5] RateLimitError — waiting 32s before retrying
+[retry 1/5] RateLimitError — waiting 40s before retrying
+[retry 1/5] RateLimitError — waiting 28s before retrying
+[retry 1/5] RateLimitError — waiting 34s before retrying
+[retry 1/5] RateLimitError — waiting 39s before retrying
+[retry 1/5] RateLimitError — waiting 24s before retrying
+[retry 1/5] RateLimitError — waiting 38s before retrying
+[retry 1/5] RateLimitError — waiting 39s before retrying
+[retry 1/5] RateLimitError — waiting 28s before retrying
+[retry 1/5] RateLimitError — waiting 23s before retrying
+[retry 1/5] RateLimitError — waiting 37s before retrying
+[retry 1/5] RateLimitError — waiting 31s before retrying
+[retry 1/5] RateLimitError — waiting 20s before retrying
+[retry 1/5] RateLimitError — waiting 25s before retrying
+[retry 1/5] RateLimitError — waiting 38s before retrying
+[retry 1/5] RateLimitError — waiting 36s before retrying
+[retry 1/5] RateLimitError — waiting 16s before retrying
+[retry 1/5] RateLimitError — waiting 18s before retrying
+[retry 1/5] RateLimitError — waiting 29s before retrying
+[retry 1/5] RateLimitError — waiting 17s before retrying
+[retry 1/5] RateLimitError — waiting 27s before retrying
+[retry 1/5] RateLimitError — waiting 17s before retrying
+[retry 1/5] RateLimitError — waiting 45s before retrying
+[retry 1/5] RateLimitError — waiting 26s before retrying
+[retry 1/5] RateLimitError — waiting 35s before retrying
+[retry 1/5] RateLimitError — waiting 23s before retrying
+[retry 1/5] RateLimitError — waiting 22s before retrying
+[retry 1/5] RateLimitError — waiting 25s before retrying
+[retry 1/5] RateLimitError — waiting 18s before retrying
+[retry 1/5] RateLimitError — waiting 31s before retrying
+[retry 1/5] RateLimitError — waiting 18s before retrying
+[retry 1/5] RateLimitError — waiting 31s before retrying
+[retry 1/5] RateLimitError — waiting 36s before retrying
+[retry 1/5] RateLimitError — waiting 29s before retrying
+[retry 1/5] RateLimitError — waiting 25s before retrying
+[retry 1/5] RateLimitError — waiting 39s before retrying
+[retry 1/5] RateLimitError — waiting 19s before retrying
+[retry 1/5] RateLimitError — waiting 19s before retrying
+[retry 1/5] RateLimitError — waiting 32s before retrying
+[retry 1/5] RateLimitError — waiting 35s before retrying
+[retry 1/5] RateLimitError — waiting 27s before retrying
+[retry 1/5] RateLimitError — waiting 33s before retrying
+[retry 1/5] RateLimitError — waiting 29s before retrying
+[retry 1/5] RateLimitError — waiting 21s before retrying
+[retry 1/5] RateLimitError — waiting 38s before retrying
+[retry 1/5] RateLimitError — waiting 43s before retrying
+[retry 1/5] RateLimitError — waiting 29s before retrying
+[retry 1/5] RateLimitError — waiting 42s before retrying
+[retry 1/5] RateLimitError — waiting 33s before retrying
+[retry 1/5] RateLimitError — waiting 34s before retrying
+[retry 1/5] RateLimitError — waiting 24s before retrying
+[retry 1/5] RateLimitError — waiting 44s before retrying
+[retry 1/5] RateLimitError — waiting 31s before retrying
+[retry 1/5] RateLimitError — waiting 45s before retrying
+[retry 1/5] RateLimitError — waiting 25s before retrying
+[retry 1/5] RateLimitError — waiting 43s before retrying
+[retry 1/5] RateLimitError — waiting 37s before retrying
+[retry 1/5] RateLimitError — waiting 29s before retrying
+[retry 1/5] RateLimitError — waiting 43s before retrying
+[retry 1/5] RateLimitError — waiting 43s before retrying
+[retry 1/5] RateLimitError — waiting 20s before retrying
+[retry 1/5] RateLimitError — waiting 29s before retrying
+[retry 1/5] RateLimitError — waiting 42s before retrying
+[retry 1/5] RateLimitError — waiting 43s before retrying
+[retry 1/5] RateLimitError — waiting 36s before retrying
+[retry 1/5] RateLimitError — waiting 21s before retrying
+[retry 1/5] RateLimitError — waiting 19s before retrying
+[retry 1/5] RateLimitError — waiting 44s before retrying
+[retry 1/5] RateLimitError — waiting 40s before retrying
+[retry 1/5] RateLimitError — waiting 17s before retrying
+[retry 1/5] RateLimitError — waiting 24s before retrying
+[retry 1/5] RateLimitError — waiting 24s before retrying
+[retry 1/5] RateLimitError — waiting 44s before retrying
+[retry 1/5] RateLimitError — waiting 36s before retrying
+[retry 1/5] RateLimitError — waiting 40s before retrying
+[retry 1/5] RateLimitError — waiting 43s before retrying
+[retry 1/5] RateLimitError — waiting 24s before retrying
+[retry 1/5] RateLimitError — waiting 28s before retrying
+[retry 1/5] RateLimitError — waiting 41s before retrying
+[retry 1/5] RateLimitError — waiting 35s before retrying
+[retry 1/5] RateLimitError — waiting 43s before retrying
+[retry 1/5] RateLimitError — waiting 15s before retrying
+[retry 1/5] RateLimitError — waiting 45s before retrying
+[retry 1/5] RateLimitError — waiting 21s before retrying
+[retry 1/5] RateLimitError — waiting 34s before retrying
+[retry 1/5] RateLimitError — waiting 25s before retrying
+[retry 1/5] RateLimitError — waiting 23s before retrying
+[retry 1/5] RateLimitError — waiting 44s before retrying
+[retry 1/5] RateLimitError — waiting 40s before retrying
+[retry 1/5] RateLimitError — waiting 35s before retrying
+[retry 1/5] RateLimitError — waiting 31s before retrying
+[retry 1/5] RateLimitError — waiting 33s before retrying
+[retry 1/5] RateLimitError — waiting 16s before retrying
+[retry 1/5] RateLimitError — waiting 40s before retrying
+[retry 1/5] RateLimitError — waiting 32s before retrying
+[retry 1/5] RateLimitError — waiting 30s before retrying
+[retry 1/5] RateLimitError — waiting 36s before retrying
+[retry 1/5] RateLimitError — waiting 36s before retrying
+[retry 1/5] RateLimitError — waiting 17s before retrying
+[retry 1/5] RateLimitError — waiting 35s before retrying
+[retry 2/5] RateLimitError — waiting 56s before retrying
+[retry 2/5] RateLimitError — waiting 36s before retrying
+[retry 2/5] RateLimitError — waiting 58s before retrying
+[retry 2/5] RateLimitError — waiting 47s before retrying
+[retry 2/5] RateLimitError — waiting 46s before retrying
+[retry 2/5] RateLimitError — waiting 54s before retrying
+[retry 2/5] RateLimitError — waiting 46s before retrying
+[retry 2/5] RateLimitError — waiting 53s before retrying
+[retry 2/5] RateLimitError — waiting 49s before retrying
+[retry 2/5] RateLimitError — waiting 57s before retrying
+[retry 2/5] RateLimitError — waiting 54s before retrying
+[retry 2/5] RateLimitError — waiting 43s before retrying
+[retry 2/5] RateLimitError — waiting 58s before retrying
+[retry 2/5] RateLimitError — waiting 32s before retrying
+[retry 2/5] RateLimitError — waiting 48s before retrying
+[retry 2/5] RateLimitError — waiting 44s before retrying
+[retry 2/5] RateLimitError — waiting 56s before retrying
+[retry 2/5] RateLimitError — waiting 44s before retrying
+[retry 2/5] RateLimitError — waiting 34s before retrying
+[retry 2/5] RateLimitError — waiting 57s before retrying
+[retry 2/5] RateLimitError — waiting 56s before retrying
+[retry 2/5] RateLimitError — waiting 59s before retrying
+[retry 2/5] RateLimitError — waiting 38s before retrying
+[retry 2/5] RateLimitError — waiting 37s before retrying
+[retry 2/5] RateLimitError — waiting 37s before retrying
+[retry 2/5] RateLimitError — waiting 36s before retrying
+[retry 2/5] RateLimitError — waiting 60s before retrying
+[retry 2/5] RateLimitError — waiting 44s before retrying
+[retry 2/5] RateLimitError — waiting 51s before retrying
+[retry 2/5] RateLimitError — waiting 34s before retrying
+[retry 2/5] RateLimitError — waiting 52s before retrying
+[retry 2/5] RateLimitError — waiting 46s before retrying
+[retry 2/5] RateLimitError — waiting 41s before retrying
+[retry 2/5] RateLimitError — waiting 42s before retrying
+[retry 2/5] RateLimitError — waiting 54s before retrying
+[retry 2/5] RateLimitError — waiting 49s before retrying
+[retry 2/5] RateLimitError — waiting 54s before retrying
+[retry 2/5] RateLimitError — waiting 51s before retrying
+[retry 2/5] RateLimitError — waiting 39s before retrying
+[retry 2/5] RateLimitError — waiting 39s before retrying
+[retry 2/5] RateLimitError — waiting 43s before retrying
+[retry 2/5] RateLimitError — waiting 43s before retrying
+[retry 2/5] RateLimitError — waiting 43s before retrying
+[retry 2/5] RateLimitError — waiting 43s before retrying
+[retry 2/5] RateLimitError — waiting 33s before retrying
+[retry 2/5] RateLimitError — waiting 41s before retrying
+[retry 2/5] RateLimitError — waiting 41s before retrying
+[retry 2/5] RateLimitError — waiting 36s before retrying
+[retry 2/5] RateLimitError — waiting 46s before retrying
+[retry 2/5] RateLimitError — waiting 48s before retrying
+[retry 2/5] RateLimitError — waiting 53s before retrying
+[retry 2/5] RateLimitError — waiting 59s before retrying
+[retry 2/5] RateLimitError — waiting 38s before retrying
+[retry 2/5] RateLimitError — waiting 40s before retrying
+[retry 2/5] RateLimitError — waiting 51s before retrying
+[retry 2/5] RateLimitError — waiting 52s before retrying
+[retry 2/5] RateLimitError — waiting 54s before retrying
+[retry 2/5] RateLimitError — waiting 56s before retrying
+[retry 2/5] RateLimitError — waiting 40s before retrying
+[retry 2/5] RateLimitError — waiting 33s before retrying
+[retry 2/5] RateLimitError — waiting 36s before retrying
+[retry 2/5] RateLimitError — waiting 38s before retrying
+[retry 2/5] RateLimitError — waiting 32s before retrying
+[retry 2/5] RateLimitError — waiting 35s before retrying
+[retry 2/5] RateLimitError — waiting 52s before retrying
+[retry 2/5] RateLimitError — waiting 37s before retrying
+[retry 2/5] RateLimitError — waiting 39s before retrying
+[retry 2/5] RateLimitError — waiting 42s before retrying
+[retry 2/5] RateLimitError — waiting 55s before retrying
+[retry 2/5] RateLimitError — waiting 31s before retrying
+[retry 2/5] RateLimitError — waiting 38s before retrying
+[retry 2/5] RateLimitError — waiting 59s before retrying
+[retry 2/5] RateLimitError — waiting 57s before retrying
+[retry 2/5] RateLimitError — waiting 39s before retrying
+[retry 2/5] RateLimitError — waiting 33s before retrying
+[retry 2/5] RateLimitError — waiting 31s before retrying
+[retry 2/5] RateLimitError — waiting 55s before retrying
+[retry 2/5] RateLimitError — waiting 53s before retrying
+[retry 2/5] RateLimitError — waiting 40s before retrying
+[retry 2/5] RateLimitError — waiting 54s before retrying
+[retry 2/5] RateLimitError — waiting 53s before retrying
+[retry 2/5] RateLimitError — waiting 57s before retrying
+[retry 2/5] RateLimitError — waiting 45s before retrying
+[retry 2/5] RateLimitError — waiting 52s before retrying
+[retry 2/5] RateLimitError — waiting 43s before retrying
+[retry 2/5] RateLimitError — waiting 34s before retrying
+[retry 2/5] RateLimitError — waiting 51s before retrying
+[retry 2/5] RateLimitError — waiting 34s before retrying
+[retry 2/5] RateLimitError — waiting 32s before retrying
+[retry 2/5] RateLimitError — waiting 56s before retrying
+[retry 2/5] RateLimitError — waiting 37s before retrying
+[retry 2/5] RateLimitError — waiting 40s before retrying
+[retry 2/5] RateLimitError — waiting 47s before retrying
+[retry 2/5] RateLimitError — waiting 40s before retrying
+[retry 2/5] RateLimitError — waiting 37s before retrying
+[retry 2/5] RateLimitError — waiting 48s before retrying
+[retry 2/5] RateLimitError — waiting 38s before retrying
+[retry 2/5] RateLimitError — waiting 50s before retrying
+[retry 2/5] RateLimitError — waiting 57s before retrying
+[retry 2/5] RateLimitError — waiting 47s before retrying
+[retry 2/5] RateLimitError — waiting 38s before retrying
+[retry 2/5] RateLimitError — waiting 44s before retrying
+[retry 2/5] RateLimitError — waiting 44s before retrying
+[retry 2/5] RateLimitError — waiting 46s before retrying
+[retry 2/5] RateLimitError — waiting 52s before retrying
+[retry 2/5] RateLimitError — waiting 52s before retrying
+[retry 2/5] RateLimitError — waiting 53s before retrying
+[retry 2/5] RateLimitError — waiting 34s before retrying
+[retry 2/5] RateLimitError — waiting 54s before retrying
+[retry 2/5] RateLimitError — waiting 42s before retrying
+[retry 2/5] RateLimitError — waiting 35s before retrying
+[retry 2/5] RateLimitError — waiting 59s before retrying
+[retry 2/5] RateLimitError — waiting 49s before retrying
+[retry 2/5] RateLimitError — waiting 42s before retrying
+[retry 2/5] RateLimitError — waiting 47s before retrying
+[retry 2/5] RateLimitError — waiting 30s before retrying
+[retry 2/5] RateLimitError — waiting 47s before retrying
+[retry 2/5] RateLimitError — waiting 32s before retrying
+[retry 2/5] RateLimitError — waiting 57s before retrying
+[retry 2/5] RateLimitError — waiting 59s before retrying
+[retry 2/5] RateLimitError — waiting 31s before retrying
+[retry 2/5] RateLimitError — waiting 39s before retrying
+[retry 2/5] RateLimitError — waiting 34s before retrying
+[retry 2/5] RateLimitError — waiting 31s before retrying
+[retry 2/5] RateLimitError — waiting 32s before retrying
+[retry 2/5] RateLimitError — waiting 31s before retrying
+[retry 2/5] RateLimitError — waiting 58s before retrying
+[retry 2/5] RateLimitError — waiting 43s before retrying
+[retry 2/5] RateLimitError — waiting 32s before retrying
+[retry 2/5] RateLimitError — waiting 53s before retrying
+[retry 2/5] RateLimitError — waiting 48s before retrying
+[retry 2/5] RateLimitError — waiting 45s before retrying
+[retry 2/5] RateLimitError — waiting 59s before retrying
+[retry 2/5] RateLimitError — waiting 31s before retrying
+[retry 2/5] RateLimitError — waiting 44s before retrying
+[retry 2/5] RateLimitError — waiting 36s before retrying
+[retry 2/5] RateLimitError — waiting 39s before retrying
+[retry 2/5] RateLimitError — waiting 60s before retrying
+[retry 2/5] RateLimitError — waiting 44s before retrying
+[retry 2/5] RateLimitError — waiting 51s before retrying
+[retry 2/5] RateLimitError — waiting 51s before retrying
+[retry 2/5] RateLimitError — waiting 33s before retrying
+[retry 2/5] RateLimitError — waiting 43s before retrying
+[retry 2/5] RateLimitError — waiting 51s before retrying
+[retry 2/5] RateLimitError — waiting 56s before retrying
+[retry 2/5] RateLimitError — waiting 57s before retrying
+[retry 2/5] RateLimitError — waiting 39s before retrying
+[retry 2/5] RateLimitError — waiting 37s before retrying
+[retry 2/5] RateLimitError — waiting 33s before retrying
+[retry 2/5] RateLimitError — waiting 30s before retrying
+[retry 2/5] RateLimitError — waiting 31s before retrying
+[retry 2/5] RateLimitError — waiting 45s before retrying
+[retry 2/5] RateLimitError — waiting 58s before retrying
+[retry 2/5] RateLimitError — waiting 31s before retrying
+[retry 2/5] RateLimitError — waiting 39s before retrying
+[retry 2/5] RateLimitError — waiting 49s before retrying
+[retry 2/5] RateLimitError — waiting 30s before retrying
+[retry 2/5] RateLimitError — waiting 30s before retrying
+[retry 2/5] RateLimitError — waiting 35s before retrying
+[retry 2/5] RateLimitError — waiting 36s before retrying
+[retry 2/5] RateLimitError — waiting 43s before retrying
+[retry 2/5] RateLimitError — waiting 33s before retrying
+[retry 2/5] RateLimitError — waiting 43s before retrying
+[retry 2/5] RateLimitError — waiting 33s before retrying
+[retry 2/5] RateLimitError — waiting 57s before retrying
+[retry 2/5] RateLimitError — waiting 35s before retrying
+[retry 2/5] RateLimitError — waiting 48s before retrying
+[retry 2/5] RateLimitError — waiting 57s before retrying
+[retry 2/5] RateLimitError — waiting 32s before retrying
+[retry 2/5] RateLimitError — waiting 60s before retrying
+[retry 2/5] RateLimitError — waiting 43s before retrying
+[retry 2/5] RateLimitError — waiting 31s before retrying
+[retry 2/5] RateLimitError — waiting 51s before retrying
+[retry 2/5] RateLimitError — waiting 53s before retrying
+[retry 2/5] RateLimitError — waiting 53s before retrying
+[retry 2/5] RateLimitError — waiting 56s before retrying
+[retry 2/5] RateLimitError — waiting 43s before retrying
+[retry 2/5] RateLimitError — waiting 31s before retrying
+[retry 2/5] RateLimitError — waiting 40s before retrying
+[retry 2/5] RateLimitError — waiting 45s before retrying
+[retry 2/5] RateLimitError — waiting 52s before retrying
+[retry 2/5] RateLimitError — waiting 48s before retrying
+[retry 2/5] RateLimitError — waiting 49s before retrying
+[retry 2/5] RateLimitError — waiting 36s before retrying
+[retry 2/5] RateLimitError — waiting 55s before retrying
+[retry 2/5] RateLimitError — waiting 32s before retrying
+[retry 2/5] RateLimitError — waiting 56s before retrying
+[retry 2/5] RateLimitError — waiting 36s before retrying
+[retry 2/5] RateLimitError — waiting 45s before retrying
+[retry 2/5] RateLimitError — waiting 55s before retrying
+[retry 2/5] RateLimitError — waiting 60s before retrying
+[retry 2/5] RateLimitError — waiting 51s before retrying
+[retry 2/5] RateLimitError — waiting 33s before retrying
+[retry 2/5] RateLimitError — waiting 43s before retrying
+[retry 2/5] RateLimitError — waiting 41s before retrying
+[retry 2/5] RateLimitError — waiting 56s before retrying
+[retry 2/5] RateLimitError — waiting 34s before retrying
+[retry 2/5] RateLimitError — waiting 48s before retrying
+[retry 2/5] RateLimitError — waiting 56s before retrying
+[retry 2/5] RateLimitError — waiting 48s before retrying
+[retry 2/5] RateLimitError — waiting 57s before retrying
+[retry 2/5] RateLimitError — waiting 60s before retrying
+[retry 2/5] RateLimitError — waiting 58s before retrying
+[retry 2/5] RateLimitError — waiting 50s before retrying
+[retry 2/5] RateLimitError — waiting 44s before retrying
+[retry 2/5] RateLimitError — waiting 40s before retrying
+[retry 2/5] RateLimitError — waiting 38s before retrying
+[retry 2/5] RateLimitError — waiting 57s before retrying
+[retry 2/5] RateLimitError — waiting 32s before retrying
+[retry 2/5] RateLimitError — waiting 42s before retrying
+[retry 2/5] RateLimitError — waiting 59s before retrying
+[retry 2/5] RateLimitError — waiting 54s before retrying
+[retry 2/5] RateLimitError — waiting 33s before retrying
+[retry 2/5] RateLimitError — waiting 45s before retrying
+[retry 2/5] RateLimitError — waiting 54s before retrying
+[retry 2/5] RateLimitError — waiting 46s before retrying
+[retry 2/5] RateLimitError — waiting 60s before retrying
+[retry 2/5] RateLimitError — waiting 54s before retrying
+[retry 2/5] RateLimitError — waiting 47s before retrying
+[retry 2/5] RateLimitError — waiting 36s before retrying
+[retry 2/5] RateLimitError — waiting 46s before retrying
+[retry 3/5] RateLimitError — waiting 63s before retrying
+[retry 3/5] RateLimitError — waiting 68s before retrying
+[retry 3/5] RateLimitError — waiting 74s before retrying
+[retry 3/5] RateLimitError — waiting 90s before retrying
+[retry 3/5] RateLimitError — waiting 81s before retrying
+[retry 3/5] RateLimitError — waiting 80s before retrying
+[retry 3/5] RateLimitError — waiting 65s before retrying
+[retry 3/5] RateLimitError — waiting 68s before retrying
+[retry 3/5] RateLimitError — waiting 84s before retrying
+[retry 3/5] RateLimitError — waiting 82s before retrying
+[retry 3/5] RateLimitError — waiting 72s before retrying
+[retry 3/5] RateLimitError — waiting 84s before retrying
+[retry 3/5] RateLimitError — waiting 76s before retrying
+[retry 3/5] RateLimitError — waiting 65s before retrying
+[retry 3/5] RateLimitError — waiting 61s before retrying
+[retry 3/5] RateLimitError — waiting 80s before retrying
+[retry 3/5] RateLimitError — waiting 78s before retrying
+[retry 3/5] RateLimitError — waiting 89s before retrying
+[retry 3/5] RateLimitError — waiting 60s before retrying
+[retry 3/5] RateLimitError — waiting 82s before retrying
+[retry 3/5] RateLimitError — waiting 81s before retrying
+[retry 3/5] RateLimitError — waiting 64s before retrying
+[retry 3/5] RateLimitError — waiting 82s before retrying
+[retry 3/5] RateLimitError — waiting 65s before retrying
+[retry 3/5] RateLimitError — waiting 65s before retrying
+[retry 3/5] RateLimitError — waiting 82s before retrying
+[retry 3/5] RateLimitError — waiting 64s before retrying
+[retry 3/5] RateLimitError — waiting 65s before retrying
+[retry 3/5] RateLimitError — waiting 67s before retrying
+[retry 3/5] RateLimitError — waiting 74s before retrying
+[retry 3/5] RateLimitError — waiting 89s before retrying
+[retry 3/5] RateLimitError — waiting 84s before retrying
+[retry 3/5] RateLimitError — waiting 80s before retrying
+[retry 3/5] RateLimitError — waiting 78s before retrying
+[retry 3/5] RateLimitError — waiting 81s before retrying
+[retry 3/5] RateLimitError — waiting 61s before retrying
+[retry 3/5] RateLimitError — waiting 62s before retrying
+[retry 3/5] RateLimitError — waiting 90s before retrying
+[retry 3/5] RateLimitError — waiting 64s before retrying
+[retry 3/5] RateLimitError — waiting 90s before retrying
+[retry 3/5] RateLimitError — waiting 78s before retrying
+[retry 3/5] RateLimitError — waiting 77s before retrying
+[retry 3/5] RateLimitError — waiting 60s before retrying
+[retry 3/5] RateLimitError — waiting 64s before retrying
+[retry 3/5] RateLimitError — waiting 64s before retrying
+[retry 3/5] RateLimitError — waiting 87s before retrying
+[retry 3/5] RateLimitError — waiting 62s before retrying
+[retry 3/5] RateLimitError — waiting 63s before retrying
+[retry 3/5] RateLimitError — waiting 67s before retrying
+[retry 3/5] RateLimitError — waiting 79s before retrying
+[retry 3/5] RateLimitError — waiting 70s before retrying
+[retry 3/5] RateLimitError — waiting 65s before retrying
+[retry 3/5] RateLimitError — waiting 78s before retrying
+[retry 3/5] RateLimitError — waiting 87s before retrying
+[retry 3/5] RateLimitError — waiting 73s before retrying
+[retry 3/5] RateLimitError — waiting 88s before retrying
+[retry 3/5] RateLimitError — waiting 90s before retrying
+[retry 3/5] RateLimitError — waiting 74s before retrying
+[retry 3/5] InternalServerError — waiting 88s before retrying
+[retry 3/5] RateLimitError — waiting 84s before retrying
+[retry 3/5] RateLimitError — waiting 87s before retrying
+[retry 3/5] RateLimitError — waiting 72s before retrying
+[retry 3/5] RateLimitError — waiting 61s before retrying
+[retry 3/5] RateLimitError — waiting 75s before retrying
+[retry 3/5] RateLimitError — waiting 63s before retrying
+[retry 3/5] RateLimitError — waiting 86s before retrying
+[retry 3/5] RateLimitError — waiting 72s before retrying
+[retry 3/5] RateLimitError — waiting 63s before retrying
+[retry 3/5] RateLimitError — waiting 63s before retrying
+[retry 3/5] RateLimitError — waiting 76s before retrying
+[retry 3/5] RateLimitError — waiting 70s before retrying
+[retry 3/5] RateLimitError — waiting 62s before retrying
+[retry 3/5] RateLimitError — waiting 61s before retrying
+[retry 3/5] RateLimitError — waiting 65s before retrying
+[retry 3/5] RateLimitError — waiting 66s before retrying
+[retry 3/5] RateLimitError — waiting 72s before retrying
+[retry 3/5] RateLimitError — waiting 83s before retrying
+[retry 3/5] RateLimitError — waiting 77s before retrying
+[retry 3/5] RateLimitError — waiting 78s before retrying
+[retry 3/5] RateLimitError — waiting 70s before retrying
+[retry 3/5] RateLimitError — waiting 68s before retrying
+[retry 3/5] RateLimitError — waiting 64s before retrying
+[retry 3/5] RateLimitError — waiting 69s before retrying
+[retry 3/5] RateLimitError — waiting 72s before retrying
+[retry 3/5] RateLimitError — waiting 70s before retrying
+[retry 3/5] RateLimitError — waiting 70s before retrying
+[retry 3/5] RateLimitError — waiting 62s before retrying
+[retry 3/5] RateLimitError — waiting 86s before retrying
+[retry 3/5] RateLimitError — waiting 82s before retrying
+[retry 3/5] RateLimitError — waiting 64s before retrying
+[retry 3/5] RateLimitError — waiting 82s before retrying
+[retry 3/5] RateLimitError — waiting 89s before retrying
+[retry 3/5] RateLimitError — waiting 62s before retrying
+[retry 3/5] RateLimitError — waiting 66s before retrying
+[retry 3/5] RateLimitError — waiting 86s before retrying
+[retry 3/5] RateLimitError — waiting 75s before retrying
+[retry 3/5] RateLimitError — waiting 62s before retrying
+[retry 3/5] RateLimitError — waiting 82s before retrying
+[retry 3/5] RateLimitError — waiting 86s before retrying
+[retry 3/5] RateLimitError — waiting 74s before retrying
+[retry 3/5] RateLimitError — waiting 89s before retrying
+[retry 3/5] RateLimitError — waiting 64s before retrying
+[retry 3/5] RateLimitError — waiting 83s before retrying
+[retry 3/5] RateLimitError — waiting 86s before retrying
+[retry 3/5] RateLimitError — waiting 67s before retrying
+[retry 3/5] RateLimitError — waiting 79s before retrying
+[retry 3/5] RateLimitError — waiting 62s before retrying
+[retry 3/5] RateLimitError — waiting 70s before retrying
+[retry 3/5] RateLimitError — waiting 71s before retrying
+[retry 3/5] RateLimitError — waiting 78s before retrying
+[retry 3/5] RateLimitError — waiting 77s before retrying
+[retry 3/5] RateLimitError — waiting 72s before retrying
+[retry 3/5] RateLimitError — waiting 76s before retrying
+[retry 3/5] RateLimitError — waiting 83s before retrying
+[retry 3/5] RateLimitError — waiting 70s before retrying
+[retry 3/5] RateLimitError — waiting 67s before retrying
+[retry 3/5] RateLimitError — waiting 72s before retrying
+[retry 3/5] RateLimitError — waiting 61s before retrying
+[retry 3/5] RateLimitError — waiting 88s before retrying
+[retry 3/5] RateLimitError — waiting 88s before retrying
+[retry 3/5] RateLimitError — waiting 64s before retrying
+[retry 3/5] RateLimitError — waiting 71s before retrying
+[retry 3/5] RateLimitError — waiting 65s before retrying
+[retry 3/5] RateLimitError — waiting 71s before retrying
+[retry 3/5] RateLimitError — waiting 65s before retrying
+[retry 3/5] RateLimitError — waiting 71s before retrying
+[retry 3/5] RateLimitError — waiting 82s before retrying
+[retry 3/5] RateLimitError — waiting 63s before retrying
+[retry 3/5] RateLimitError — waiting 76s before retrying
+[retry 3/5] RateLimitError — waiting 64s before retrying
+[retry 3/5] RateLimitError — waiting 80s before retrying
+[retry 3/5] RateLimitError — waiting 85s before retrying
+[retry 3/5] RateLimitError — waiting 84s before retrying
+[retry 3/5] RateLimitError — waiting 90s before retrying
+[retry 3/5] RateLimitError — waiting 69s before retrying
+[retry 3/5] RateLimitError — waiting 77s before retrying
+[retry 3/5] RateLimitError — waiting 86s before retrying
+[retry 3/5] RateLimitError — waiting 64s before retrying
+[retry 3/5] RateLimitError — waiting 66s before retrying
+[retry 3/5] RateLimitError — waiting 75s before retrying
+[retry 3/5] RateLimitError — waiting 82s before retrying
+[retry 3/5] RateLimitError — waiting 62s before retrying
+[retry 3/5] RateLimitError — waiting 67s before retrying
+[retry 3/5] RateLimitError — waiting 84s before retrying
+[retry 3/5] RateLimitError — waiting 82s before retrying
+[retry 3/5] RateLimitError — waiting 87s before retrying
+[retry 3/5] RateLimitError — waiting 64s before retrying
+[retry 3/5] RateLimitError — waiting 65s before retrying
+[retry 3/5] RateLimitError — waiting 66s before retrying
+[retry 3/5] RateLimitError — waiting 84s before retrying
+[retry 3/5] RateLimitError — waiting 76s before retrying
+[retry 3/5] RateLimitError — waiting 80s before retrying
+[retry 3/5] RateLimitError — waiting 71s before retrying
+[retry 3/5] RateLimitError — waiting 75s before retrying
+[retry 3/5] RateLimitError — waiting 87s before retrying
+[retry 3/5] RateLimitError — waiting 84s before retrying
+[retry 3/5] RateLimitError — waiting 74s before retrying
+[retry 3/5] RateLimitError — waiting 72s before retrying
+[retry 3/5] RateLimitError — waiting 69s before retrying
+[retry 3/5] RateLimitError — waiting 60s before retrying
+[retry 3/5] RateLimitError — waiting 69s before retrying
+[retry 3/5] RateLimitError — waiting 65s before retrying
+[retry 3/5] RateLimitError — waiting 85s before retrying
+[retry 3/5] RateLimitError — waiting 76s before retrying
+[retry 3/5] RateLimitError — waiting 70s before retrying
+[retry 3/5] RateLimitError — waiting 80s before retrying
+[retry 3/5] RateLimitError — waiting 68s before retrying
+[retry 3/5] RateLimitError — waiting 83s before retrying
+[retry 3/5] RateLimitError — waiting 73s before retrying
+[retry 3/5] RateLimitError — waiting 85s before retrying
+[retry 3/5] RateLimitError — waiting 62s before retrying
+[retry 3/5] RateLimitError — waiting 81s before retrying
+[retry 3/5] RateLimitError — waiting 78s before retrying
+[retry 4/5] RateLimitError — waiting 147s before retrying
+[retry 4/5] RateLimitError — waiting 139s before retrying
+[retry 4/5] RateLimitError — waiting 135s before retrying
+[retry 4/5] RateLimitError — waiting 128s before retrying
+[retry 4/5] RateLimitError — waiting 139s before retrying
+[retry 4/5] RateLimitError — waiting 132s before retrying
+[retry 4/5] RateLimitError — waiting 121s before retrying
+[retry 4/5] RateLimitError — waiting 145s before retrying
+[retry 4/5] RateLimitError — waiting 148s before retrying
+[retry 4/5] RateLimitError — waiting 134s before retrying
+[retry 4/5] RateLimitError — waiting 127s before retrying
+[retry 4/5] RateLimitError — waiting 127s before retrying
+[retry 4/5] RateLimitError — waiting 142s before retrying
+[retry 4/5] RateLimitError — waiting 140s before retrying
+[retry 4/5] RateLimitError — waiting 130s before retrying
+[retry 4/5] RateLimitError — waiting 129s before retrying
+[retry 4/5] RateLimitError — waiting 132s before retrying
+[retry 4/5] RateLimitError — waiting 148s before retrying
+[retry 4/5] RateLimitError — waiting 120s before retrying
+[retry 4/5] RateLimitError — waiting 132s before retrying
+[retry 4/5] RateLimitError — waiting 130s before retrying
+[retry 4/5] RateLimitError — waiting 128s before retrying
+[retry 4/5] RateLimitError — waiting 127s before retrying
+[retry 4/5] RateLimitError — waiting 126s before retrying
+[retry 4/5] RateLimitError — waiting 134s before retrying
+[retry 4/5] RateLimitError — waiting 144s before retrying
+[retry 4/5] RateLimitError — waiting 140s before retrying
+[retry 4/5] RateLimitError — waiting 125s before retrying
+[retry 4/5] RateLimitError — waiting 136s before retrying
+[retry 4/5] RateLimitError — waiting 135s before retrying
+[retry 4/5] RateLimitError — waiting 123s before retrying
+[retry 4/5] RateLimitError — waiting 139s before retrying
+[retry 4/5] RateLimitError — waiting 148s before retrying
+[retry 4/5] RateLimitError — waiting 132s before retrying
+[retry 4/5] RateLimitError — waiting 128s before retrying
+[retry 4/5] RateLimitError — waiting 132s before retrying
+[retry 4/5] RateLimitError — waiting 138s before retrying
+[retry 4/5] RateLimitError — waiting 144s before retrying
+[retry 4/5] RateLimitError — waiting 121s before retrying
+[retry 4/5] RateLimitError — waiting 127s before retrying
+[retry 4/5] RateLimitError — waiting 125s before retrying
+[retry 4/5] RateLimitError — waiting 129s before retrying
+[retry 4/5] RateLimitError — waiting 136s before retrying
+[retry 4/5] RateLimitError — waiting 145s before retrying
+[retry 4/5] RateLimitError — waiting 148s before retrying
+[retry 4/5] RateLimitError — waiting 145s before retrying
+[retry 4/5] RateLimitError — waiting 132s before retrying
+[retry 4/5] RateLimitError — waiting 140s before retrying
+[retry 4/5] RateLimitError — waiting 120s before retrying
+[retry 4/5] RateLimitError — waiting 130s before retrying
+[retry 4/5] RateLimitError — waiting 135s before retrying
+[retry 4/5] RateLimitError — waiting 148s before retrying
+[retry 4/5] RateLimitError — waiting 131s before retrying
+[retry 4/5] RateLimitError — waiting 132s before retrying
+[retry 4/5] RateLimitError — waiting 129s before retrying
+[retry 4/5] RateLimitError — waiting 122s before retrying
+[retry 4/5] RateLimitError — waiting 137s before retrying
+[retry 4/5] RateLimitError — waiting 125s before retrying
+[retry 4/5] RateLimitError — waiting 140s before retrying
+[retry 4/5] RateLimitError — waiting 147s before retrying
+[retry 4/5] RateLimitError — waiting 137s before retrying
+[retry 4/5] RateLimitError — waiting 125s before retrying
+[retry 4/5] RateLimitError — waiting 125s before retrying
+[retry 4/5] RateLimitError — waiting 137s before retrying
+[retry 4/5] RateLimitError — waiting 136s before retrying
+[retry 4/5] RateLimitError — waiting 133s before retrying
+[retry 4/5] RateLimitError — waiting 137s before retrying
+[retry 4/5] RateLimitError — waiting 127s before retrying
+[retry 4/5] RateLimitError — waiting 147s before retrying
+[retry 4/5] RateLimitError — waiting 142s before retrying
+[retry 4/5] RateLimitError — waiting 135s before retrying
+[retry 4/5] RateLimitError — waiting 123s before retrying
+[retry 4/5] RateLimitError — waiting 121s before retrying
+[retry 4/5] RateLimitError — waiting 137s before retrying
+[retry 4/5] RateLimitError — waiting 138s before retrying
+[retry 4/5] RateLimitError — waiting 135s before retrying
+[retry 4/5] RateLimitError — waiting 140s before retrying
+[retry 4/5] RateLimitError — waiting 121s before retrying
+[retry 4/5] RateLimitError — waiting 143s before retrying
+[retry 4/5] RateLimitError — waiting 144s before retrying
+[retry 4/5] RateLimitError — waiting 125s before retrying
+[retry 4/5] RateLimitError — waiting 120s before retrying
+[retry 4/5] RateLimitError — waiting 135s before retrying
+[retry 4/5] RateLimitError — waiting 148s before retrying
+[retry 4/5] RateLimitError — waiting 139s before retrying
+[retry 4/5] RateLimitError — waiting 144s before retrying
+[retry 4/5] RateLimitError — waiting 149s before retrying
+[retry 4/5] RateLimitError — waiting 124s before retrying
+[retry 4/5] RateLimitError — waiting 139s before retrying
+[retry 4/5] RateLimitError — waiting 128s before retrying
+[retry 4/5] RateLimitError — waiting 126s before retrying
+[retry 4/5] RateLimitError — waiting 135s before retrying
+[retry 4/5] RateLimitError — waiting 124s before retrying
+[retry 4/5] RateLimitError — waiting 141s before retrying
+[retry 4/5] RateLimitError — waiting 142s before retrying
+[retry 4/5] RateLimitError — waiting 144s before retrying
+[retry 4/5] RateLimitError — waiting 128s before retrying
+[retry 4/5] RateLimitError — waiting 128s before retrying
+[retry 4/5] RateLimitError — waiting 122s before retrying
+[retry 4/5] RateLimitError — waiting 134s before retrying
+[retry 4/5] RateLimitError — waiting 133s before retrying
+[retry 4/5] RateLimitError — waiting 133s before retrying
+[retry 4/5] RateLimitError — waiting 144s before retrying
+[retry 4/5] RateLimitError — waiting 128s before retrying
+Traceback (most recent call last):
+  File "/Users/zacharywojtowicz/Dropbox/academics/research/working/drawbridge_persuasion/persuasion_experiments/generation_2x2/generate_arguments.py", line 726, in <module>
+    main()
+  File "/Users/zacharywojtowicz/Dropbox/academics/research/working/drawbridge_persuasion/persuasion_experiments/generation_2x2/generate_arguments.py", line 722, in main
+    asyncio.run(async_main())
+  File "/opt/homebrew/Cellar/python@3.12/3.12.7_1/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.12/3.12.7_1/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.12/3.12.7_1/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py", line 687, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/Users/zacharywojtowicz/Dropbox/academics/research/working/drawbridge_persuasion/persuasion_experiments/generation_2x2/generate_arguments.py", line 644, in async_main
+    results = await asyncio.gather(*[
+              ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zacharywojtowicz/Dropbox/academics/research/working/drawbridge_persuasion/persuasion_experiments/generation_2x2/generate_arguments.py", line 587, in run_topic
+    stance_runs = await asyncio.gather(*[_run_orientation(p) for p in politics_list])
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zacharywojtowicz/Dropbox/academics/research/working/drawbridge_persuasion/persuasion_experiments/generation_2x2/generate_arguments.py", line 575, in _run_orientation
+    quads = await asyncio.gather(*quad_tasks)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zacharywojtowicz/Dropbox/academics/research/working/drawbridge_persuasion/persuasion_experiments/generation_2x2/generate_arguments.py", line 522, in _generate_quad
+    essays = await asyncio.gather(*[_gen_essay(c, b) for (c, b) in QUAD_CELLS])
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zacharywojtowicz/Dropbox/academics/research/working/drawbridge_persuasion/persuasion_experiments/generation_2x2/generate_arguments.py", line 507, in _gen_essay
+    essay, essay_prompt = await generate_essay(
+                          ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zacharywojtowicz/Dropbox/academics/research/working/drawbridge_persuasion/persuasion_experiments/generation_2x2/generate_arguments.py", line 433, in generate_essay
+    text = await client.complete(prompt, model, temperature=temperature, system=SYSTEM_PROMPT)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zacharywojtowicz/Dropbox/academics/research/working/drawbridge_persuasion/persuasion_experiments/generation_2x2/generate_arguments.py", line 241, in complete
+    resp = await self._client.messages.create(**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zacharywojtowicz/pyenv/lib/python3.12/site-packages/anthropic/resources/messages/messages.py", line 2443, in create
+    return await self._post(
+           ^^^^^^^^^^^^^^^^^
+  File "/Users/zacharywojtowicz/pyenv/lib/python3.12/site-packages/anthropic/_base_client.py", line 1992, in post
+    return await self.request(cast_to, opts, stream=stream, stream_cls=stream_cls)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zacharywojtowicz/pyenv/lib/python3.12/site-packages/anthropic/_base_client.py", line 1777, in request
+    raise self._make_status_error_from_response(err.response) from None
+anthropic.RateLimitError: Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': "This request would exceed your organization's rate limit of 50 requests per minute (org: d8ee895c-e439-4403-9dc2-ce82ee325d6d, model: claude-opus-4-6). For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Try again later. View your current limits at https://console.anthropic.com/settings/limits. To raise this limit, purchase credits to advance to the next usage tier at https://console.anthropic.com/settings/billing."}, 'request_id': 'req_011CbSJWw7z8MnixBT5hPjZ2'}
