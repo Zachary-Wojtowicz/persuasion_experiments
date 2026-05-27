@@ -37,8 +37,12 @@ Qualtrics.SurveyEngine.addOnReady(function () {
         }
   
         var tTopic = norm(topic);
-        var tPol   = norm(politics);
         var tTone  = norm(tone);
+
+        // Flip politics so participants see counter-attitudinal essays:
+        // essays tagged "liberal" were written to persuade a conservative audience, and vice versa.
+        var oppositeMap = { "liberal": "conservative", "conservative": "liberal" };
+        var tPol = oppositeMap[norm(politics)] || norm(politics);
   
         // Collect all matching essays across all stance_runs + pairs
         var candidates = [];
